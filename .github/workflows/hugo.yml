@@ -50,7 +50,7 @@ jobs:
             --minify --verbose -D \
             --buildFuture \
             --environment production \
-            --themesDir ../../hugo-simple-theme --theme hugo-simple-theme \
+            --themesDir ../.. --theme hugo-simple-theme \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
         working-directory: exampleSite
       - name: Upload artifact
