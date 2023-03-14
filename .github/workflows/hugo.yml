@@ -37,8 +37,6 @@ jobs:
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v3
-        env:
-          base_url: 'https://simple-is-awesome.github.io/hugo-simple-theme/'
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -54,6 +52,10 @@ jobs:
             --environment production \
             --themesDir ../.. --theme hugo-simple-theme \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+          echo ${{ steps.pages.outputs.base_url }}
+          pwd
+          ls ../*
+          ls ../../*
         working-directory: exampleSite
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
