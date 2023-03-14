@@ -6,6 +6,8 @@ languageCode = 'en-us'
 title = 'Hugo Simple Theme'
 # 网站使用的主题
 theme = 'hugo-simple-theme'
+# NOTE remove this line if you copy exampleSite outof hugo-PaperModX
+themesdir = "."
 
 # 网站的菜单栏配置
 [menu]
