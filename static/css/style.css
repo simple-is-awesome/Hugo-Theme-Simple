@@ -1,0 +1,32 @@
+body { 
+  font-size: 20px;
+  background-color: #f5f5d5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+pre {
+  background-color: #8fb4a7;
+  padding: 1em;
+  max-height: 400px;
+  border-radius: 0.25rem;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+blockquote {
+  background-color: rgba(193, 23, 23, 0.201);
+  border-radius: 3px;
+  padding: 1em;
+}
