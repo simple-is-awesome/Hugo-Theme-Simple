@@ -53,8 +53,11 @@ jobs:
             --themesDir ../.. --theme hugo-simple-theme \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
           echo ${{ steps.pages.outputs.base_url }}
+          echo "------"
           pwd
+          echo "------"
           ls ../*
+          echo "------"
           ls ../../*
         working-directory: exampleSite
       - name: Upload artifact
