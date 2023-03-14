@@ -37,6 +37,8 @@ jobs:
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v3
+        env:
+          base_url: 'https://simple-is-awesome.github.io/hugo-simple-theme/'
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
