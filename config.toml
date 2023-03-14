@@ -1,0 +1,49 @@
+# 网站的基本url地址
+baseURL = 'http://example.org/'
+# 网站使用的语言代码
+languageCode = 'en-us'
+# 网站标题
+title = 'xxx'
+# 网站使用的主题
+theme = 'simple'
+
+# 网站的菜单栏配置
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+[permalinks]
+  blog = "/:year/:month/:slug"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      linkifyProtocol = 'https'
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = 'github'
+      [markup.goldmark.parser.attribute]
+        block = false
+        title = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xhtml = false
+    [markup.tableOfContents]
+        startLevel = 1
+        endLevel = 2
+        ordered = false
+     
