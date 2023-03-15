@@ -13,3 +13,4 @@ A simple hugo theme built with bootstrap+lightbox+jquery.
 # Lisence
 
 MIT
+

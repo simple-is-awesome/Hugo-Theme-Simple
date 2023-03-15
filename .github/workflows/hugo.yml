@@ -42,7 +42,6 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-          extended: true
 
       - name: Build
         run: |
@@ -51,16 +50,7 @@ jobs:
             --buildFuture \
             --environment production \
             --themesDir ../.. --theme hugo-simple-theme \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
-          echo ${{ steps.pages.outputs.base_url }}
-          echo "------"
-          pwd
-          echo "------"
-          ls
-          echo "------"
-          ls ../*
-          echo "------"
-          ls ../../*
+            --baseURL "https://hugo.njxzc.top/"
         working-directory: exampleSite
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

@@ -1,5 +1,5 @@
 # 网站的基本url地址
-baseURL = 'http://example.org/'
+baseURL = 'https://hugo.njxzc.top/'
 # 网站使用的语言代码
 languageCode = 'en-us'
 # 网站标题
