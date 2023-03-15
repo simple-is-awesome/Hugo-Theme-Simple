@@ -53,7 +53,7 @@ hugo server
 
 你可以看以下的gif动图，这张动图展示了步骤二和步骤三的操作流程：
 
-![step2 and step3 demo](https://github.com/simple-is-awesome/hugo-simple-theme/blob/main/static/images/hugo_step2_step3.gif)
+<img src="https://github.com/simple-is-awesome/hugo-simple-theme/blob/main/static/images/hugo_step2_step3.gif?raw=true" width="800px" alt="step2 and step3 demo">
 
  - 步骤四
 

@@ -52,7 +52,7 @@ hugo server
 
 You can see the gif below, which shows the step2 and step3:
 
-![step2 and step3 demo](https://github.com/simple-is-awesome/hugo-simple-theme/blob/main/static/images/hugo_step2_step3.gif)
+<img src="https://github.com/simple-is-awesome/hugo-simple-theme/blob/main/static/images/hugo_step2_step3.gif?raw=true" width="800px" alt="step2 and step3 demo">
 
  - step4
 
