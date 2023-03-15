@@ -37,14 +37,14 @@ hugo new site your_site_name
 cd your_site_name
 # initialize a new git repo
 git init
-# add a external git repo(themes/hugo-simple-theme git repo) as a submodule to this git repo
-# when a git repo contains a nested sub-git repo, use submodule has many advantages.
+# add an external git repo(themes/hugo-simple-theme git repo) as a submodule to this git repo
+# when a git repo contains a nested sub-git repo, use submodule has many advantages
 git submodule add https://github.com/simple-is-awesome/hugo-simple-theme.git themes/hugo-simple-theme
 ```
 
 - step3
 
-Copy the exampleSite folder to your hugo site root folder and replace the default files. Pls delete the CNAME file as it is used to custom domain name in GitHub. I perfer recommending you to use Netlify or Vercel to deploy your blog as they are more convenient than github pages.
+Copy the exampleSite folder to your hugo site root folder and replace the default files. Pls delete the CNAME file as it is used to custom domain name in GitHub. I perfer recommending you to use Netlify or Vercel to deploy your blog as they are more convenient than GitHub pages.
 
 ```bash
 hugo server
@@ -52,7 +52,7 @@ hugo server
 
 You can see the gif below, which shows the step2 and step3:
 
-![step2 and step3 demo](https://cdn.jsdelivr.net/gh/simple-is-awesome/hugo-simple-theme@main/static/images/hugo_step2_step3.gif)
+![step2 and step3 demo](https://github.com/simple-is-awesome/hugo-simple-theme/blob/main/static/images/hugo_step2_step3.gif)
 
  - step4
 
@@ -71,8 +71,8 @@ hugo new blog/xxx.md
 
  - step6
 
-    - Add、Commit and Push your repo to github. 
-    - Import your github repo to Netlify or Vercel to enjoy auto deployment. You can find more information in hugo official docs [Hosting & Deployment](https://gohugo.io/hosting-and-deployment/) or other resources On the Internet.
+    - Add、Commit and Push your repo to GitHub. 
+    - Import your GitHub repo to Netlify or Vercel to enjoy auto deployment. You can find more information in hugo official docs [Hosting & Deployment](https://gohugo.io/hosting-and-deployment/) or other resources On the Internet.
 
 Happy blogging! :blush: :blush: :blush:
 
