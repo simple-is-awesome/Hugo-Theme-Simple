@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{/*  定义html的头部元素  */}}
+    {{/*  html head  */}}
     {{- partial "head.html" . -}}
     <body class="d-flex flex-column min-vh-100">
-        {{/*  header模板，定义网站的标题栏等信息  */}}
+        {{/*  html header  */}}
         {{- partial "header.html" . -}}
 
-        {{/*  html文档的主要内容  */}}
+        {{/*  html main  */}}
         <div class="flex-fill container mx-auto mt-3">
            <div class="row">
                 <div class="col-7 offset-2">
@@ -19,7 +19,7 @@
            </div>
         </div>
 
-        {{/*  footer模板，定义网站的页脚等信息  */}}
+        {{/*  html footer  */}}
         {{- partial "footer.html" . -}}
         <script src="/js/lightbox-plus-jquery.min.js"></script>
         <script src="/js/custom.js"></script>

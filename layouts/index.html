@@ -1,6 +1,5 @@
 {{ define "main" }}
 <ul class="list-unstyled text-center">
-    {{/*  {{ range where .Site.RegularPages "Type" "in" (slice "blog" "test")}}  */}}
     {{ range where .Site.RegularPages "Type" "==" "blog"}}
     <div class="row">
         <li class="h5">

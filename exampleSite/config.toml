@@ -6,8 +6,6 @@ languageCode = 'en-us'
 title = 'Hugo Simple Theme'
 # hugo theme
 theme = 'hugo-simple-theme'
-# generate url without slash
-uglyURLs = true
 
 # website menu
 [menu]
@@ -28,7 +26,7 @@ uglyURLs = true
 [markup]
   # goldmark is the default markdown render of hugo
   [markup.goldmark]
-    # extensions
+    # more explainations, pls visit: https://gohugo.io/getting-started/configuration-markup/#goldmark
     [markup.goldmark.extensions]
       definitionList = true
       footnote = true
