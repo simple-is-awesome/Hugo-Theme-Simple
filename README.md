@@ -16,7 +16,7 @@ Confucius once said, "Life is really simple, but we insist on making it complica
 
 - Responsive
 
-- clean
+- Clean
 
 ## Usage
 
