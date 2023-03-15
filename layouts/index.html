@@ -2,11 +2,15 @@
 <ul class="list-unstyled text-center">
     {{ range where .Site.RegularPages "Type" "==" "blog"}}
     <div class="row">
-        <li class="h5">
-            <em>
-                {{ .Date.Format "2006-01" }} &nbsp;
-            </em>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <li class="h5 d-flex align-items-center">
+            <div class="col-3">
+                <em>
+                    {{ .Date.Format "2006-01-02" }} &nbsp;
+                </em>
+            </div>
+            <div class="col-9">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </div>
         </li>
     </div>
     {{ else }}
