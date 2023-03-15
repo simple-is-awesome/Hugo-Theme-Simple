@@ -44,12 +44,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-
-      # get baseurl
-      - name: Extract baseURL from config
-        run: |
-          echo "BASE_URL=$(grep -oP 'baseURL\s*=\s*\"\K[^\"]+' exampleSite/config.toml)" >> $GITHUB_ENV
-
+          
       # build website
       - name: Build
         run: |
