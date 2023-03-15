@@ -43,6 +43,10 @@ jobs:
         with:
           hugo-version: 'latest'
 
+      - name: Extract baseURL from config
+        run: |
+          echo "BASE_URL=$(grep -oP 'baseURL\s*=\s*\"\K[^\"]+' exampleSite/config.toml)" >> $GITHUB_ENV
+
       - name: Build
         run: |
           hugo \
@@ -50,8 +54,9 @@ jobs:
             --buildFuture \
             --environment production \
             --themesDir ../.. --theme hugo-simple-theme \
-            --baseURL "https://hugo.njxzc.top/"
+            --baseURL "${{ env.BASE_URL }}"
         working-directory: exampleSite
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

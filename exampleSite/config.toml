@@ -6,8 +6,8 @@ languageCode = 'en-us'
 title = 'Hugo Simple Theme'
 # 网站使用的主题
 theme = 'hugo-simple-theme'
-# NOTE remove this line if you copy exampleSite outof hugo-PaperModX
-themesdir = "."
+# 生成不带尾部斜杠的 URL
+uglyURLs = true
 
 # 网站的菜单栏配置
 [menu]
