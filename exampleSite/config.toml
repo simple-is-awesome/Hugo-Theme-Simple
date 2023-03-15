@@ -1,15 +1,15 @@
-# 网站的基本url地址
+# website base url
 baseURL = 'https://hugo.njxzc.top/'
-# 网站使用的语言代码
+# website language
 languageCode = 'en-us'
-# 网站标题
+# website title
 title = 'Hugo Simple Theme'
-# 网站使用的主题
+# hugo theme
 theme = 'hugo-simple-theme'
-# 生成不带尾部斜杠的 URL
+# generate url without slash
 uglyURLs = true
 
-# 网站的菜单栏配置
+# website menu
 [menu]
   [[menu.main]]
     name = "Home"
@@ -20,11 +20,15 @@ uglyURLs = true
     url = "/about/"
     weight = 2
 
+# website permanent link
 [permalinks]
   blog = "/:year/:month/:slug"
 
+# website markdown render
 [markup]
+  # goldmark is the default markdown render of hugo
   [markup.goldmark]
+    # extensions
     [markup.goldmark.extensions]
       definitionList = true
       footnote = true
