@@ -5,7 +5,7 @@ name = "Simple"
 license = "MIT"
 licenselink = "https://github.com/simple-is-awesome/hugo-simple-theme/blob/main/LICENSE"
 description = "A simple theme for Hugo"
-homepage = "http://lobdigest.com/"
+homepage = "http://hugo.njxzc.top/"
 tags = [
   "hugo",
   "simple"

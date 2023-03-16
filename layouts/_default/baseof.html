@@ -21,7 +21,9 @@
 
         {{/*  html footer  */}}
         {{- partial "footer.html" . -}}
-        <script src="/js/lightbox-plus-jquery.min.js"></script>
-        <script src="/js/custom.js"></script>
+        {{/*  html scripts  */}}
+        {{- partial "scripts.html" . -}}
+        {{/*  html analytics  */}}
+        {{- partial "analytics.html" . -}"}}
     </body>
 </html>

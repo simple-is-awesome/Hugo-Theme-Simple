@@ -18,6 +18,12 @@ theme = 'hugo-simple-theme'
     url = "/about/"
     weight = 2
 
+# website params
+[params]
+  footer= "&copy; 2022-{Year} Made with ❤️ By Jiakai"
+  baidutongji = ""
+  googleanalytics = ""
+
 # website permanent link
 [permalinks]
   blog = "/:year/:month/:slug"
