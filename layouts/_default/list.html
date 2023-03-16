@@ -1,8 +1,22 @@
 {{ define "main" }}
+<<<<<<< HEAD
     <h1>📌"{{ .Title }}"</h1>
     <ul>
         {{ range .Data.Pages }}
             <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
         {{ end }}
     </ul>
+=======
+    <div class="container">
+        <h1 class="mt-5 mb-4">📌 {{ .Title }}</h1>
+        <ul class="list-group">
+            {{ range .Data.Pages }}
+                <li class="list-group-item">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <span class="badge badge-secondary">{{ .Date.Format "2006-01-02" }}</span>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+>>>>>>> 7ab9e6b (build: :lipstick: update layouts)
 {{ end }}
