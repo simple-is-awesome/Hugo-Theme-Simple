@@ -12,11 +12,21 @@ Hugo Simple Theme 是一款简约的hugo博客主题，采用bootstrap+lightbox+
 
 孔子曾经说过：“生活本来就很简单，但我们总是喜欢把它变得复杂。”秉承这个观念，我们的目标是回归博客的本质，重新发掘它最初的魅力。这个主题体现了简约与优雅，让你能够专注于真正重要的事物 - 你的内容。
 
+## 演示和截图
+
+[演示站点](https://hugo.njxzc.top) 或者 [我的个人博客](https://blog.gujiakai.top)
+
+![Screenshot](https://vip2.loli.io/2023/03/16/bRuOzHDndLXm8kT.webp)
+
 ## 主题优点
 
 - 响应式
 
 - 清爽大气
+
+- 快速
+
+![lighthouse test](https://vip2.loli.io/2023/03/16/ztdh7Mf3kvAg1UH.webp)
 
 ## 使用方法
 

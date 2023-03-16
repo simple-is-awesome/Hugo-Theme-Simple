@@ -12,11 +12,21 @@ A simple Hugo theme built with Bootstrap+Lightbox+jQuery.
 
 Confucius once said, "Life is really simple, but we insist on making it complicated." With this in mind, our goal is to return to the essence of blogging and rediscover the original charm it holds. This theme embodies simplicity and elegance, allowing you to focus on what truly matters - your content.
 
+## Demo and Screenshot
+
+[Demo website](https://hugo.njxzc.top) or [my personal blog](https://blog.gujiakai.top)
+
+![Screenshot](https://vip2.loli.io/2023/03/16/bRuOzHDndLXm8kT.webp)
+
 ## Pros
 
 - Responsive
 
 - Clean
+
+- Fast
+
+![lighthouse test](https://vip2.loli.io/2023/03/16/ztdh7Mf3kvAg1UH.webp)
 
 ## Usage
 
