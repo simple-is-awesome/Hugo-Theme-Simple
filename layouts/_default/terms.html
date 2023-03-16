@@ -1,0 +1,18 @@
+{{- define "main" }}
+    <div class="row">
+        {{- $type := .Type }}
+        {{- range $key, $value := .Data.Terms.Alphabetical }}
+            {{- $name := .Name }}
+            {{- $count := .Count }}
+            {{- with site.GetPage (printf "/%s/%s" $type $name) }}
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                    <div class="card">
+                        <a href="{{ .Permalink }}" class="card-body text-center">
+                            <span class="h5 mb-0">{{ .Name }} <sup><strong>{{ $count }}</strong></sup></span>
+                        </a>
+                    </div>
+                </div>
+            {{- end }}
+        {{- end }}
+    </div>
+{{- end }}

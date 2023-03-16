@@ -5,7 +5,7 @@ draft: false
 tags: ["markdown"]
 notoc: true
 slug: "markdown-syntax"
-summary: "test markdown syntax under this blog theme."
+summary: "Test markdown syntax under this blog theme."
 ---
 
 ## 1、标题
@@ -263,7 +263,6 @@ console.log("hello world")
 > 要看制度和法律规定了什么样的政治程序和政治规则，更要看这些制度和法律是不是真正得到了执行；
 > 
 > 要看权力运行规则和程序是否民主，更要看权力是否真正受到人民监督和制约。
-
 > 摘自《学习强国》
 
 ## 9、表格

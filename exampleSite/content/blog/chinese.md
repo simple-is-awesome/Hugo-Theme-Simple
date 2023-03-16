@@ -4,7 +4,7 @@ date: 2023-03-14T01:37:56+08:00
 draft: false
 tags: ["中文"]
 slug: "chinese-poem"
-summary: "test chinese under this blog theme."
+summary: "Test chinese under this blog theme."
 ---
 
 >《长恨歌》是中国唐朝诗人白居易的一首长篇叙事诗。
