@@ -1,11 +1,11 @@
 ---
-title: "Markdown语法"
+title: "Markdown Syntax"
 date: 2023-03-14T00:00:00+08:00
 draft: false
 tags: ["markdown"]
 notoc: true
 slug: "markdown-syntax"
-summary: "测试博客主题markdown展示效果"
+summary: "test markdown syntax under this blog theme."
 ---
 
 ## 1、标题
