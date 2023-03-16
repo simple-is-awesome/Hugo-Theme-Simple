@@ -4,16 +4,11 @@
     <h2 class="text-center border border-primary rounded p-3">{{ .Title }}</h2>
     <br/>
     {{ .Content }}
-<<<<<<< HEAD
+    {{ range .Params.tags}}
+    📌 <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+    {{ end }}
     {{/*  utterances  */}}
     {{- partial "utterances.html" . -}}
-=======
-    <div>
-      {{ range .Params.tags}}
-      📌 <a href="/tags/{{ . | urlize }}">{{ . }}</a>
-      {{ end }}
-    </div>
->>>>>>> 7ab9e6b (build: :lipstick: update layouts)
   </div>
 </div>
 {{ end }}
