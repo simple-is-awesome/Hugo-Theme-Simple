@@ -5,6 +5,7 @@ draft: false
 tags: ["markdown"]
 notoc: true
 slug: "markdown-syntax"
+summary: "测试博客主题markdown展示效果"
 ---
 
 ## 1、标题
