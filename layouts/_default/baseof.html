@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{/*  html head  */}}
-    {{- partial "head.html" . -}}
-    <body class="d-flex flex-column min-vh-100">
-        {{/*  html header  */}}
-        {{- partial "header.html" . -}}
+{{/* html head */}}
+{{- partial "head.html" . -}}
 
-        {{/*  html main  */}}
-        <div class="flex-fill container mx-auto mt-3 mb-5">
-           <div class="row">
-                <div class="col-7 offset-2">
-                    {{- block "main" . -}}
-                    {{- end -}}
-                </div>
-                <div class="col-3">
-                    {{- partial "sidebar.html" . -}}
-                </div>
-           </div>
-        </div>
+<body class="d-flex flex-column min-vh-100">
+  {{/* html header */}}
+  {{- partial "header.html" . -}}
 
-        {{/*  html footer  */}}
-        {{- partial "footer.html" . -}}
-        {{/*  html scripts  */}}
-        {{- partial "scripts.html" . -}}
-        {{/*  html analytics  */}}
-        {{- partial "analytics.html" . -}}
-    </body>
+  {{/* html main */}}
+  <div class="flex-fill container-fluid mx-auto mt-3 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 offset-md-3">
+        {{- block "main" . -}}
+        {{- end -}}
+      </div>
+      <div class="col-md-3">
+        {{- partial "sidebar.html" . -}}
+      </div>
+    </div>
+  </div>
+
+  {{/* html footer */}}
+  {{- partial "footer.html" . -}}
+  {{/* html scripts */}}
+  {{- partial "scripts.html" . -}}
+  {{/* html analytics */}}
+  {{- partial "analytics.html" . -}}
+</body>
+
 </html>

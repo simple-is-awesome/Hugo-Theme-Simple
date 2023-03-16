@@ -1,14 +1,12 @@
 {{ define "main" }}
-<div class="d-flex justify-content-center align-items-center">
-  <div class="container-md overflow-hidden">
-    <h2 class="text-center border border-primary rounded p-3">{{ .Title }}</h2>
-    <br/>
-    {{ .Content }}
-    {{ range .Params.tags}}
-    📌 <a href="/tags/{{ . | urlize }}">{{ . }}</a>
-    {{ end }}
-    {{/*  utterances  */}}
-    {{- partial "utterances.html" . -}}
-  </div>
+<div class="container-md align-items-center">
+  <h2 class="text-center border border-primary rounded p-3">{{ .Title }}</h2>
+  <br />
+  {{ .Content }}
+  {{ range .Params.tags}}
+  📌 <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+  {{ end }}
+  {{/* utterances */}}
+  {{- partial "utterances.html" . -}}
 </div>
 {{ end }}
