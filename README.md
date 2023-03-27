@@ -1,20 +1,18 @@
-# Hugo Simple Theme
+<h1 align=center>Hugo-Theme-Simple | <a href="https://hugo.njxzc.top">Demo</a></h1>
 
 <p align="center">
 <img src="https://vip2.loli.io/2023/03/15/9LJ1QX8kKZrRtwA.webp" alt="Simple quote">
 </p>
 
-[简体中文版本](https://github.com/simple-is-awesome/hugo-simple-theme/blob/main/README.zh-CN.md)
+[简体中文版本](https://github.com/simple-is-awesome/Hugo-Theme-Simple/blob/main/README.zh-CN.md)
 
 ## Introduction 
 
-A simple Hugo theme built with Bootstrap+Lightbox+jQuery. 
+This theme is named Simple. It's built based onBootstrap+Lightbox+jQuery. 
 
 Confucius once said, "Life is really simple, but we insist on making it complicated." With this in mind, our goal is to return to the essence of blogging and rediscover the original charm it holds. This theme embodies simplicity and elegance, allowing you to focus on what truly matters - your content.
 
-## Demo and Screenshot
-
-[Demo website](https://hugo.njxzc.top) or [my personal blog](https://blog.gujiakai.top)
+## Screenshot
 
 ![Screenshot](https://vip2.loli.io/2023/03/16/bRuOzHDndLXm8kT.webp)
 
@@ -25,8 +23,6 @@ Confucius once said, "Life is really simple, but we insist on making it complica
 - Clean
 
 - Fast
-
-![lighthouse test](https://vip2.loli.io/2023/03/16/ztdh7Mf3kvAg1UH.webp)
 
 ## Usage
 
@@ -49,7 +45,7 @@ cd your_site_name
 git init
 # add an external git repo(themes/hugo-simple-theme git repo) as a submodule to this git repo
 # when a git repo contains a nested sub-git repo, use submodule has many advantages
-git submodule add https://github.com/simple-is-awesome/hugo-simple-theme.git themes/hugo-simple-theme
+git submodule add https://github.com/simple-is-awesome/Hugo-Theme-Simple.git themes/hugo-theme-simple
 ```
 
   - step3
@@ -62,7 +58,7 @@ hugo server
 
 You can see the gif below, which shows the step2 and step3:
 
-<img src="https://github.com/simple-is-awesome/hugo-simple-theme/blob/main/static/images/hugo_step2_step3.gif?raw=true" width="800px" alt="step2 and step3 demo">
+<img src="https://github.com/simple-is-awesome/Hugo-Theme-Simple/blob/main/static/images/hugo_step2_step3.gif?raw=true" width="800px" alt="step2 and step3 demo">
 
   - step4
 

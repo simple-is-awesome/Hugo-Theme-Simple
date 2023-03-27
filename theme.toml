@@ -3,7 +3,7 @@
 
 name = "Simple"
 license = "MIT"
-licenselink = "https://github.com/simple-is-awesome/hugo-simple-theme/blob/main/LICENSE"
+licenselink = "https://github.com/simple-is-awesome/Hugo-Theme-Simple/blob/main/LICENSE"
 description = "A simple theme for Hugo"
 homepage = "http://hugo.njxzc.top/"
 tags = [
