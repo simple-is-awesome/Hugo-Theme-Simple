@@ -3,9 +3,9 @@ title: "Markdown Syntax"
 date: 2023-03-14T00:00:00+08:00
 draft: false
 tags: ["markdown"]
-notoc: true
 slug: "markdown-syntax"
 summary: "Test markdown syntax under this blog theme."
+showtoc: false
 ---
 
 ## 1、标题
@@ -83,7 +83,7 @@ ChatGPT[^3]
 代码：
 
 <pre><code>
-```C
+```c
 # include <stdio.h>
 
 int main(){
