@@ -16,13 +16,17 @@ paginate = 5
     url = "/"
     weight = 1
   [[menu.main]]
+    name = "Archive"
+    url = "/archive/"
+    weight = 2
+  [[menu.main]]
     name = "Tags"
     url = "/tags/"
-    weight = 2
+    weight = 3
   [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 3
+    weight = 4
 
 # website params
 [params]
@@ -59,7 +63,7 @@ paginate = 5
       unsafe = true
       xhtml = false
     [markup.tableOfContents]
-        startLevel = 1
-        endLevel = 2
+        startLevel = 2
+        endLevel = 3
         ordered = false
      
