@@ -3,7 +3,7 @@ baseURL = 'https://hugo.njxzc.top/'
 # website language
 languageCode = 'en-us'
 # website title
-title = 'Hugo Simple Theme'
+title = 'Hugo Theme Simple'
 # hugo theme
 theme = 'Hugo-Theme-Simple'
 # pageinate
