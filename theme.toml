@@ -8,11 +8,13 @@ description = "A simple theme for Hugo"
 homepage = "http://hugo.njxzc.top/"
 tags = [
   "hugo",
+  "theme",
   "simple"
 ]
 features = [
   "responsive",
-  "clean"
+  "clean",
+  "fast"
 ]
 min_version = "0.85.0"
 

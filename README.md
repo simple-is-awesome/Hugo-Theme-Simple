@@ -8,7 +8,7 @@
 
 ## Introduction 
 
-This theme is named Simple. It's built based onBootstrap+Lightbox+jQuery. 
+This theme is named Simple. It's built based on Bootstrap+Lightbox+jQuery. 
 
 Confucius once said, "Life is really simple, but we insist on making it complicated." With this in mind, our goal is to return to the essence of blogging and rediscover the original charm it holds. This theme embodies simplicity and elegance, allowing you to focus on what truly matters - your content.
 

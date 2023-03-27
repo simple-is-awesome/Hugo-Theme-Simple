@@ -1,20 +1,18 @@
-# Hugo Simple Theme
+<h1 align=center>Hugo-Theme-Simple | <a href="https://hugo.njxzc.top">Demo</a></h1>
 
 <p align="center">
 <img src="https://vip2.loli.io/2023/03/15/9LJ1QX8kKZrRtwA.webp" alt="Simple quote">
 </p>
 
-[English version](https://github.com/simple-is-awesome/hugo-simple-theme/blob/main/README.md)
+[English version](https://github.com/simple-is-awesome/Hugo-Theme-Simple/blob/main/README.md)
 
 ## 介绍
 
-Hugo Simple Theme 是一款简约的hugo博客主题，采用bootstrap+lightbox+jquery构建完成。
+Hugo Theme Simple是一款简约的hugo博客主题，采用Bootstrap+Lightbox+jQuery构建完成。
 
 孔子曾经说过：“生活本来就很简单，但我们总是喜欢把它变得复杂。”秉承这个观念，我们的目标是回归博客的本质，重新发掘它最初的魅力。这个主题体现了简约与优雅，让你能够专注于真正重要的事物 - 你的内容。
 
-## 演示和截图
-
-[演示站点](https://hugo.njxzc.top) 或者 [我的个人博客](https://blog.gujiakai.top)
+## 截图
 
 ![Screenshot](https://vip2.loli.io/2023/03/16/bRuOzHDndLXm8kT.webp)
 
@@ -25,8 +23,6 @@ Hugo Simple Theme 是一款简约的hugo博客主题，采用bootstrap+lightbox+
 - 清爽大气
 
 - 快速
-
-![lighthouse test](https://vip2.loli.io/2023/03/16/ztdh7Mf3kvAg1UH.webp)
 
 ## 使用方法
 
@@ -49,7 +45,7 @@ cd your_site_name
 git init
 # 将themes/hugo-simple-theme作为子模块添加到当前的git仓库
 # 当一个git仓库包含另一个git仓库时，使用子模块有很多好处
-git submodule add https://github.com/simple-is-awesome/hugo-simple-theme.git themes/hugo-simple-theme
+git submodule add https://github.com/simple-is-awesome/Hugo-Theme-Simple.git themes/hugo-theme-simple
 ```
 
 - 步骤三
@@ -63,7 +59,7 @@ hugo server
 
 你可以看以下的gif动图，这张动图展示了步骤二和步骤三的操作流程：
 
-<img src="https://github.com/simple-is-awesome/hugo-simple-theme/blob/main/static/images/hugo_step2_step3.gif?raw=true" width="800px" alt="step2 and step3 demo">
+<img src="https://github.com/simple-is-awesome/Hugo-Theme-Simple/blob/main/static/images/hugo_step2_step3.gif?raw=true" width="800px" alt="step2 and step3 demo">
 
  - 步骤四
 
