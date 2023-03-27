@@ -52,7 +52,7 @@ jobs:
             --minify --verbose -D \
             --buildFuture \
             --environment production \
-            --themesDir ../.. --theme Hugo-Theme-Simple \
+            --themesDir ../.. --theme hugo-theme-simple \
             --baseURL "${{ steps.deployment.outputs.page_url }}"
         working-directory: exampleSite
       
