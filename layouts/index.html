@@ -1,18 +1,23 @@
 {{ define "main" }}
-<div class="card-deck">
-    {{ range where .Site.RegularPages "Type" "==" "blog"}}
-    <div class="card mb-3">
+  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "blog") }}
+  <div class="card-deck">
+    {{ range $paginator.Pages }}
+      <div class="card mb-3">
         <div class="card-body">
-            <h5 class="card-title">{{ .Title }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ .Date.Format "2006-01-02" }}</h6>
-            <p class="card-text">{{ .Summary }}</p>
-            <a href="{{ .RelPermalink }}" class="card-link">Read more</a>
+          <h5 class="card-title">{{ .Title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ .Date.Format "2006-01-02" }}</h6>
+          <p class="card-text">{{ .Summary }}</p>
+          <a href="{{ .RelPermalink }}" class="card-link">Read more</a>
         </div>
-    </div>
+      </div>
     {{ else }}
-    <div class="alert alert-secondary my-3" role="alert">
+      <div class="alert alert-secondary my-3" role="alert">
         No posts yet
-    </div>      
+      </div>
     {{ end }}
-</div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    {{ template "_internal/pagination.html" . }}
+  </div>  
 {{ end }}

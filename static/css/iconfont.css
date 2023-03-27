@@ -1,0 +1,30 @@
+
+@font-face {
+  font-family: "Iconify Explorer Font";
+  src: url("/icons/iconfont.eot");
+  src: url("/icons/iconfont.eot") format("embedded-opentype"),
+       url("/icons/iconfont.ttf") format("truetype"),
+       url("/icons/iconfont.woff") format("woff"),
+       url("/icons/iconfont.woff2") format("woff2"),
+       url("/icons/iconfont.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.i {
+  font-family: "Iconify Explorer Font" !important;
+  font-size: 1em;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.i.material-symbols\:arrow-drop-down-rounded:before {
+content: "\e001";
+}
+
+.i.material-symbols\:arrow-right:before {
+content: "\e002";
+}
+

@@ -1,5 +1,29 @@
-{{ if not .Params.notoc }}
-<div class="d-none d-md-block">
-    {{ .TableOfContents }}
+{{ if .Params.showtoc }}
+<div class="d-none d-md-block p-2">
+    <div class="sidebar-toc" id="sidebarToc">
+        <div class="row">
+            <div class="col-8">
+                <div class="toc-header d-flex align-items-center bg-dark-subtle" id="tocHeader" data-bs-toggle="collapse" data-bs-target="#tocContent" aria-expanded="true" aria-controls="tocContent">
+                    <i class="i material-symbols:arrow-drop-down-rounded d-inline" id="arrow-down"></i>
+                    <i class="i material-symbols:arrow-right d-none" id="arrow-right"></i>
+                    <span class="ms-2">Table Of Content</span>
+                </div>        
+                <div id="tocContent" class="collapse show bg-dark-subtle">
+                    {{ .TableOfContents }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+    document.getElementById("tocHeader").addEventListener("click", function () {
+        var arrowDown = document.getElementById("arrow-down");
+        var arrowRight = document.getElementById("arrow-right");
+        arrowDown.classList.toggle("d-none");
+        arrowDown.classList.toggle("d-inline");
+        arrowRight.classList.toggle("d-none");
+        arrowRight.classList.toggle("d-inline");
+    });
+</script>
 {{ end }}

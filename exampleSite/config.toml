@@ -6,6 +6,8 @@ languageCode = 'en-us'
 title = 'Hugo Simple Theme'
 # hugo theme
 theme = 'hugo-simple-theme'
+# pageinate
+paginate = 5
 
 # website menu
 [menu]
