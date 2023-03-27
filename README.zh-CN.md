@@ -1,4 +1,4 @@
-<h1 align=center>Hugo-Theme-Simple | <a href="https://hugo.njxzc.top">Demo</a></h1>
+<h1 align=center>Hugo-Theme-Simple | <a href="https://hugo.njxzc.top" target="_blank">Demo</a></h1>
 
 <p align="center">
 <img src="https://vip2.loli.io/2023/03/15/9LJ1QX8kKZrRtwA.webp" alt="Simple quote">
@@ -50,7 +50,8 @@ git submodule add https://github.com/simple-is-awesome/Hugo-Theme-Simple.git the
 
 - 步骤三
 
-将hugo-theme-simple文件夹中的exampleSite文件夹的内容复制到hugo站点的根目录并替换掉默认的文件。记得删除掉CNAME文件，因为这个文件是我用来在GitHub pages上自定义域名的。我个人更推荐你使用Netlify或者Vercel来部署你的个人博客，因为它们比GitHub pages更方便。
+将hugo-theme-simple
+文件夹中的exampleSite文件夹的内容复制到hugo站点的根目录并替换掉默认的文件。记得删除掉CNAME文件，因为这个文件是我用来在GitHub pages上自定义域名的。我个人更推荐你使用Netlify或者Vercel来部署你的个人博客，因为它们比GitHub pages更方便。
 
 ```bash
 # 启动一个本地的web服务器，来实时预览hugo生成的站点
