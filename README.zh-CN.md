@@ -8,7 +8,7 @@
 
 ## 介绍
 
-Hugo Theme Simple是一款简约的hugo博客主题，采用Bootstrap+Lightbox+jQuery构建完成。
+Hugo Theme Simple是一款简约的Hugo博客主题，采用Bootstrap+Lightbox+jQuery构建完成。
 
 孔子曾经说过：“生活本来就很简单，但我们总是喜欢把它变得复杂。”秉承这个观念，我们的目标是回归博客的本质，重新发掘它最初的魅力。这个主题体现了简约与优雅，让你能够专注于真正重要的事物 - 你的内容。
 
