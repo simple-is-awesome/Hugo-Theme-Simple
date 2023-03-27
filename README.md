@@ -43,7 +43,7 @@ hugo new site your_site_name
 cd your_site_name
 # initialize a new git repo
 git init
-# add an external git repo(themes/hugo-simple-theme git repo) as a submodule to this git repo
+# add an external git repo(themes/hugo-theme-simple) as a submodule to this git repo
 # when a git repo contains a nested sub-git repo, use submodule has many advantages
 git submodule add https://github.com/simple-is-awesome/Hugo-Theme-Simple.git themes/hugo-theme-simple
 ```

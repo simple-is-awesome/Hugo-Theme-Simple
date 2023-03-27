@@ -43,14 +43,14 @@ hugo new site your_site_name
 cd your_site_name
 # 初始化git仓库
 git init
-# 将themes/hugo-simple-theme作为子模块添加到当前的git仓库
+# 将themes/hugo-theme-simple作为子模块添加到当前的git仓库
 # 当一个git仓库包含另一个git仓库时，使用子模块有很多好处
 git submodule add https://github.com/simple-is-awesome/Hugo-Theme-Simple.git themes/hugo-theme-simple
 ```
 
 - 步骤三
 
-将hugo-simple-theme文件夹中的exampleSite文件夹的内容复制到hugo站点的根目录并替换掉默认的文件。记得删除掉CNAME文件，因为这个文件是我用来在GitHub pages上自定义域名的。我个人更推荐你使用Netlify或者Vercel来部署你的个人博客，因为它们比GitHub pages更方便。
+将hugo-theme-simple文件夹中的exampleSite文件夹的内容复制到hugo站点的根目录并替换掉默认的文件。记得删除掉CNAME文件，因为这个文件是我用来在GitHub pages上自定义域名的。我个人更推荐你使用Netlify或者Vercel来部署你的个人博客，因为它们比GitHub pages更方便。
 
 ```bash
 # 启动一个本地的web服务器，来实时预览hugo生成的站点
