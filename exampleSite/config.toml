@@ -63,7 +63,7 @@ paginate = 5
       unsafe = true
       xhtml = false
     [markup.tableOfContents]
-        startLevel = 2
-        endLevel = 3
-        ordered = false
+      startLevel = 2
+      endLevel = 3
+      ordered = false
      
