@@ -31,7 +31,6 @@ paginate = 5
 # website params
 [params]
   footer= "&copy; 2022-{Year} Made with ❤️ By Jiakai"
-  baidutongji = ""
   googleanalytics = ""
 
 # website permanent link
