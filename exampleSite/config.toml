@@ -8,6 +8,9 @@ title = 'Hugo Theme Simple'
 theme = 'hugo-theme-simple'
 # pageinate
 paginate = 5
+# If true, auto-detect Chinese/Japanese/Korean Languages in the content. 
+# This will make .Summary and .WordCount behave correctly for CJK languages.
+hasCJKLanguage = true
 
 # website menu
 [menu]

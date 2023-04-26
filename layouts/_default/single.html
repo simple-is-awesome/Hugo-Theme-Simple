@@ -1,7 +1,19 @@
 {{ define "main" }}
 <div class="container-md align-items-center">
   <h2 class="text-center border border-primary rounded p-3">{{ .Title }}</h2>
-  <br />
+  {{ if eq .Type "blog" }}
+  <div class="d-flex gap-3 mb-3">
+    <span class="iconfont icon-date card-subtitle">{{ .Date.Format "2006-01-02" }}</span>
+    <span class="iconfont icon-tag card-subtitle">
+      {{ range .Params.tags }}
+        #{{ . }},
+      {{ end }}
+    </span>
+    <span class="iconfont icon-wenjianxinxi card-subtitle">{{ .WordCount }} words</span>
+    <span class="iconfont icon-time card-subtitle">{{ .ReadingTime }} min read</span>
+  </div>
+  {{ end }}
+  
   {{ .Content }}
   {{ range .Params.tags}}
   📌 <a href="/tags/{{ . | urlize }}">{{ . }}</a>

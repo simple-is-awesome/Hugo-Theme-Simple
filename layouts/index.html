@@ -1,23 +1,36 @@
 {{ define "main" }}
-  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "blog") }}
-  <div class="card-deck">
-    {{ range $paginator.Pages }}
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">{{ .Title }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ .Date.Format "2006-01-02" }}</h6>
-          <p class="card-text">{{ .Summary }}</p>
-          <a href="{{ .RelPermalink }}" class="card-link">Read more</a>
-        </div>
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "blog") }}
+<div class="card-deck">
+  {{ range $paginator.Pages }}
+  <div class="card mb-3">
+    <div class="card-body">
+      <h4 class="card-title">
+        <a href="{{ .RelPermalink }}" class="card-link text-decoration-none">{{ .Title }}</a>
+      </h4>
+      <p class="card-text">{{ .Summary }}</p>
+    </div>
+    <div class="card-footer">
+      <div class="d-flex gap-3">
+        <span class="iconfont icon-date card-subtitle">{{ .Date.Format "2006-01-02" }}</span>
+        <span class="iconfont icon-tag card-subtitle">
+          {{ range .Params.tags }}
+            #{{ . }},
+          {{ end }}
+        </span>
+        <span class="iconfont icon-wenjianxinxi card-subtitle">{{ .WordCount }} words</span>
+        <span class="iconfont icon-time card-subtitle">{{ .ReadingTime }} min read</span>
       </div>
-    {{ else }}
-      <div class="alert alert-secondary my-3" role="alert">
-        No posts yet
-      </div>
-    {{ end }}
-  </div>
+    </div>
 
-  <div class="d-flex justify-content-center">
-    {{ template "_internal/pagination.html" . }}
-  </div>  
+  </div>
+  {{ else }}
+  <div class="alert alert-secondary my-3" role="alert">
+    No posts yet
+  </div>
+  {{ end }}
+</div>
+
+<div class="d-flex justify-content-center">
+  {{ template "_internal/pagination.html" . }}
+</div>
 {{ end }}
