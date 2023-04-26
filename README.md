@@ -30,7 +30,7 @@ Confucius once said, "Life is really simple, but we insist on making it complica
 
 Install Hugo
 
-you can find more information in offical Hugo docs [Installation](https://gohugo.io/installation/) or Youtuber-Mike Dane's [Tutorials about Hugo](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3).
+you can find more information in official Hugo docs [Installation](https://gohugo.io/installation/) or Youtuber-Mike Dane's [Tutorials about Hugo](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3).
 
   - step2 
 
@@ -56,7 +56,7 @@ Copy the exampleSite folder to your Hugo site root folder and replace the defaul
 hugo server
 ```
 
-You can see the gif below, which shows the step2 and step3:
+You can see the GIF below, which shows the step2 and step3:
 
 <img src="https://github.com/simple-is-awesome/Hugo-Theme-Simple/blob/main/static/images/hugo_step2_step3.gif?raw=true" width="800px" alt="step2 and step3 demo">
 
