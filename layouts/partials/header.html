@@ -1,8 +1,18 @@
-<div class="container mx-auto text-center pt-4">
-    <h1 class="mb-2">{{ .Site.Title }}</h1>
-    <div class="mt-2 btn-group" role="group" aria-label="Main menu">
-        {{ range .Site.Menus.main }}
-        <a class="h4 mb-3 me-5" href="{{ .URL }}">{{ .Name }}</a>
-        {{ end }}
+<nav class="navbar navbar-expand-lg">
+    <div class="container border-bottom">
+        <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                {{ range .Site.Menus.main }}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
     </div>
-</div>
+</nav>

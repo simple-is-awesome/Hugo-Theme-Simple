@@ -13,8 +13,9 @@
       <div class="d-flex gap-3">
         <span class="iconfont icon-date card-subtitle">{{ .Date.Format "2006-01-02" }}</span>
         <span class="iconfont icon-tag card-subtitle">
-          {{ range .Params.tags }}
-            #{{ . }},
+          {{ $tagCount := len .Params.tags }}
+          {{ range $index, $tag := .Params.tags }}
+            #{{ $tag }}{{ if lt (add $index 1) $tagCount }},{{ end }}
           {{ end }}
         </span>
         <span class="iconfont icon-wenjianxinxi card-subtitle">{{ .WordCount }} words</span>
