@@ -7,7 +7,7 @@
     <span class="iconfont icon-tag card-subtitle">
       {{ $tagCount := len .Params.tags }}
       {{ range $index, $tag := .Params.tags }}
-        #{{ $tag }}{{ if lt (add $index 1) $tagCount }},{{ end }}
+      #{{ $tag }}{{ if lt (add $index 1) $tagCount }},{{ end }}
       {{ end }}
     </span>
     <span class="iconfont icon-wenjianxinxi card-subtitle">{{ .WordCount }} words</span>
@@ -16,9 +16,6 @@
   {{ end }}
 
   {{ .Content }}
-  {{ range .Params.tags}}
-  📌 <a href="/tags/{{ . | urlize }}">{{ . }}</a>
-  {{ end }}
 
   <div class="d-flex justify-content-between mt-4">
     {{ with .Prev }}
@@ -36,6 +33,11 @@
     </div>
     {{ end }}
   </div>
+
+  {{/* copyright */}}
+  {{ if eq .Type "blog" }}
+  {{- partial "copyright.html" . -}}
+  {{ end }}
 
   {{/* utterances */}}
   {{- partial "utterances.html" . -}}
