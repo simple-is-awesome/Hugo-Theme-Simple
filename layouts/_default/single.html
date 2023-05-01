@@ -17,6 +17,11 @@
 
   {{ .Content }}
 
+  {{/* copyright */}}
+  {{ if eq .Type "blog" }}
+  {{- partial "copyright.html" . -}}
+  {{ end }}
+
   <div class="d-flex justify-content-between mt-4">
     {{ with .Prev }}
     <div class="d-flex align-items-center" style="max-width: 50%;">
@@ -33,11 +38,6 @@
     </div>
     {{ end }}
   </div>
-
-  {{/* copyright */}}
-  {{ if eq .Type "blog" }}
-  {{- partial "copyright.html" . -}}
-  {{ end }}
 
   {{/* utterances */}}
   {{- partial "utterances.html" . -}}
