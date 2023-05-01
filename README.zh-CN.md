@@ -30,7 +30,7 @@ Hugo Theme Simple是一款简约的Hugo博客主题，采用Bootstrap+Lightbox+j
 
 安装hugo
 
-你可以在hugo的官方文档 [Installation](https://gohugo.io/installation/) 或者 Youtuber-Mike Dane的 [关于hugo的教学视频](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3)找到更多关于本部分的内容。
+你可以在hugo的官方文档 [Installation](https://gohugo.io/installation/) 或者 YouTuber-Mike Dane的 [关于hugo的教学视频](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3)找到更多关于本部分的内容。
 
 - 步骤二
 
