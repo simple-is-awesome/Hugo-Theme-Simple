@@ -19,25 +19,25 @@
 
   {{/* copyright */}}
   {{ if eq .Type "blog" }}
-  {{- partial "copyright.html" . -}}
-  {{ end }}
+    {{- partial "copyright.html" . -}}
 
-  <div class="d-flex justify-content-between mt-4">
-    {{ with .Prev }}
-    <div class="d-flex align-items-center" style="max-width: 50%;">
-      <div class="text-truncate ml-2">
-        <a href="{{ .RelPermalink }}" class="text-decoration-none">&larr;上一篇：{{ .Title }}</a>
+    <div class="d-flex justify-content-between mt-4">
+      {{ with .Prev }}
+      <div class="d-flex align-items-center" style="max-width: 50%;">
+        <div class="text-truncate ml-2">
+          <a href="{{ .RelPermalink }}" class="text-decoration-none">&larr;上一篇：{{ .Title }}</a>
+        </div>
       </div>
-    </div>
-    {{ end }}
-    {{ with .Next }}
-    <div class="d-flex align-items-center justify-content-end" style="max-width: 50%;">
-      <div class="text-truncate mr-2">
-        <a href="{{ .RelPermalink }}" class="text-decoration-none">下一篇：{{ .Title }}&rarr;</a>
+      {{ end }}
+      {{ with .Next }}
+      <div class="d-flex align-items-center justify-content-end" style="max-width: 50%;">
+        <div class="text-truncate mr-2">
+          <a href="{{ .RelPermalink }}" class="text-decoration-none">下一篇：{{ .Title }}&rarr;</a>
+        </div>
       </div>
+      {{ end }}
     </div>
-    {{ end }}
-  </div>
+  {{ end }}
 
   {{/* utterances */}}
   {{- partial "utterances.html" . -}}
