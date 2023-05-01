@@ -52,9 +52,9 @@ jobs:
             --minify --verbose -D \
             --buildFuture \
             --environment production \
-            --themesDir ../.. --theme Hugo-Theme-Simple \
-            --baseURL "${{ steps.deployment.outputs.page_url }}"
+            --themesDir ../.. --theme Hugo-Theme-Simple
         working-directory: exampleSite
+      
       
       # upload public folder
       - name: Upload artifact

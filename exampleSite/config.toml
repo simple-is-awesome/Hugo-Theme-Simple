@@ -1,5 +1,5 @@
 # website base url
-baseURL = 'https://hugo.njxzc.top/'
+baseURL = 'https://hugo.njxzc.top'
 # website language
 languageCode = 'en-us'
 # website title
