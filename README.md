@@ -30,7 +30,7 @@ Confucius once said, "Life is really simple, but we insist on making it complica
 
 Install Hugo
 
-you can find more information in official Hugo docs [Installation](https://gohugo.io/installation/) or Youtuber-Mike Dane's [Tutorials about Hugo](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3).
+you can find more information in official Hugo docs [Installation](https://gohugo.io/installation/) or YouTuber-Mike Dane's [Tutorials about Hugo](https://www.youtube.com/playlist?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3).
 
   - step2 
 
