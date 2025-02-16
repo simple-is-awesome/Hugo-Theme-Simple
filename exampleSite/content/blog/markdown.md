@@ -166,12 +166,12 @@ console.log("hello world")
 代码：
 
 ```
-![Great Wall](https://vip2.loli.io/2023/03/14/F25Uehy3nXQlVPT.webp)
+![Great Wall](https://vip2.loli.net/2023/03/14/F25Uehy3nXQlVPT.webp)
 ```
 
 效果：
 
-![Great Wall](https://vip2.loli.io/2023/03/14/F25Uehy3nXQlVPT.webp)
+![Great Wall](https://vip2.loli.net/2023/03/14/F25Uehy3nXQlVPT.webp)
 
 ## 7、列表
 

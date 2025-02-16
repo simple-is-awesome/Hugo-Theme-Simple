@@ -1,7 +1,7 @@
 <h1 align=center>Hugo-Theme-Simple | <a href="https://hugo.njxzc.top" target="_blank">Demo</a></h1>
 
 <p align="center">
-<img src="https://vip2.loli.io/2023/03/15/9LJ1QX8kKZrRtwA.webp" alt="Simple quote">
+<img src="https://vip2.loli.net/2023/03/15/9LJ1QX8kKZrRtwA.webp" alt="Simple quote">
 </p>
 
 [简体中文版本](https://github.com/simple-is-awesome/Hugo-Theme-Simple/blob/main/README.zh-CN.md)
@@ -14,7 +14,7 @@ Confucius once said, "Life is really simple, but we insist on making it complica
 
 ## Screenshot
 
-![Screenshot](https://vip2.loli.io/2023/05/01/lQFhg3ZA85PVwuY.png)
+![Screenshot](https://vip2.loli.net/2023/05/01/lQFhg3ZA85PVwuY.png)
 
 ## Pros
 

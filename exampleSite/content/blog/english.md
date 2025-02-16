@@ -10,7 +10,7 @@ showtoc: true
 
 ## 1、诗歌图片
 
-![New York is 3 hours ahead of California](https://vip2.loli.io/2023/03/14/GzvJj1L4UQ3EnFo.webp)
+![New York is 3 hours ahead of California](https://vip2.loli.net/2023/03/14/GzvJj1L4UQ3EnFo.webp)
 
 ## 2、诗歌
 
