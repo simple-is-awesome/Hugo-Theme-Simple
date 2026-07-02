@@ -1,0 +1,18 @@
+<script src="{{ "js/jquery-4.0.0.min.js" | relURL }}"></script>
+<script src="{{ "js/lightbox.min.js" | relURL }}"></script>
+<script src="{{ "js/custom.js" | relURL }}"></script>
+<script src="{{ "js/bootstrap.bundle.min.js" | relURL }}"></script>
+<script src="{{ "js/copy-code.js" | relURL }}"></script>
+{{ if ne .Site.Params.backToTop false }}
+<script src="{{ "js/back-to-top.js" | relURL }}"></script>
+{{ end }}
+{{ if ne .Site.Params.darkMode false }}
+<script src="{{ "js/theme-toggle.js" | relURL }}"></script>
+{{ end }}
+{{ if hugo.IsProduction }}
+{{ with .Site.Params.umami }}
+{{ if and .scriptURL .websiteID }}
+<script async src="{{ .scriptURL }}" data-website-id="{{ .websiteID }}"></script>
+{{ end }}
+{{ end }}
+{{ end }}

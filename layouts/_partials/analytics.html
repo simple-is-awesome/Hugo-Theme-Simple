@@ -1,0 +1,5 @@
+{{- /* Google Analytics via the Hugo embedded template, which reads
+     services.googleAnalytics.ID itself. Loaded in production only. */ -}}
+{{- if hugo.IsProduction -}}
+{{ partial "google_analytics.html" . }}
+{{- end -}}

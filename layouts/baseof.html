@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.LanguageCode }}" data-bs-theme="light">
+{{/* html head */}}
+{{- partial "head.html" . -}}
+
+<body class="d-flex flex-column min-vh-100">
+  {{/* html header */}}
+  {{- partial "header.html" . -}}
+
+  {{/* html main */}}
+  {{/* No flex-fill on the main block: on short pages the footer is pinned to the
+       viewport bottom by footer.html's mt-auto; on long pages it follows the content. */}}
+  <div class="container-fluid site-main">
+    <div class="row justify-content-center">
+      {{ if .IsHome }}
+      <div class="col-md-6">
+        {{- block "main" . -}} {{ end }}
+      </div>
+      {{ else }}
+      <div class="col-md-6 offset-md-3">
+        {{- block "main" . -}}{{ end }}
+      </div>
+      <div class="col-md-3">
+        {{- partial "sidebar.html" . -}}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  {{/* html footer */}}
+  {{- partial "footer.html" . -}}
+  {{/* back to top button (default: enabled) */}}
+  {{ if ne .Site.Params.backToTop false }}
+  {{- partial "back-to-top.html" . -}}
+  {{ end }}
+  {{/* html scripts */}}
+  {{- partial "scripts.html" . -}}
+  {{/* html analytics */}}
+  {{- partial "analytics.html" . -}}
+</body>
+
+</html>

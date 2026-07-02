@@ -1,0 +1,62 @@
+{{/* Apply via front matter "layout: archive" on a section or page. */}}
+{{ define "main" }}
+<h1 class="mb-4">{{ .Title | default (i18n "archiveTitle" | default "Archive") }}</h1>
+
+{{ $mainSection := default "blog" .Site.Params.mainSection }}
+{{ $posts := where .Site.RegularPages "Type" "==" $mainSection }}
+{{ $postsByYear := $posts.GroupByDate "2006" }}
+
+{{ range $postsByYear }}
+<div id="{{ .Key }}" class="mb-5">
+    <h2 class="h3 mb-4">{{ .Key }}</h2>
+
+    {{/* Term pages via .GetTerms so chip links honor the site's taxonomy/permalink config. */}}
+    {{ $yearTerms := slice }}
+    {{ range .Pages }}
+        {{ range .GetTerms "tags" }}
+            {{ $yearTerms = $yearTerms | append . }}
+        {{ end }}
+    {{ end }}
+
+    {{/* Dedupe on .Path: .GetTerms returns distinct Page wrappers per call, so uniq can't collapse them. */}}
+    {{ $tagCounts := slice }}
+    {{ $seenPaths := slice }}
+    {{ range $term := $yearTerms }}
+        {{ if not (in $seenPaths $term.Path) }}
+            {{ $seenPaths = $seenPaths | append $term.Path }}
+            {{ $count := 0 }}
+            {{ range $yearTerms }}
+                {{ if eq .Path $term.Path }}
+                    {{ $count = add $count 1 }}
+                {{ end }}
+            {{ end }}
+            {{ $tagCounts = $tagCounts | append (dict "term" $term "count" $count) }}
+        {{ end }}
+    {{ end }}
+
+    {{ with $tagCounts }}
+    <div class="mb-4">
+        {{ range sort . "count" "desc" }}
+            <a href="{{ .term.RelPermalink }}" class="badge bg-secondary text-decoration-none me-2">#{{ .term.LinkTitle }} ({{ .count }})</a>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* Group on a "2006-01" key, then localize the month heading with time.Format. */}}
+    {{ $postsByMonth := .Pages.GroupByDate "2006-01" }}
+    {{ range $postsByMonth }}
+    <div class="mb-4">
+        <h3 class="h5 text-muted">{{ time.Format "January" (time.AsTime (printf "%s-01" .Key)) }}</h3>
+        <ul class="list-unstyled ps-3">
+            {{ range .Pages.ByDate.Reverse }}
+            <li class="mb-2 d-flex justify-content-between align-items-baseline">
+                <a href="{{ .RelPermalink }}" class="text-decoration-none">{{ .Title }}</a>
+                <span class="text-muted" style="font-family: monospace; min-width: 4em;">{{ .Date.Format "01-02" }}</span>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+</div>
+{{ end }}
+{{ end }}

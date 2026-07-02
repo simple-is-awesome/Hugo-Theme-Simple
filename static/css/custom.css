@@ -1,5 +1,250 @@
+/* ===========================================
+   Light / Dark Mode CSS Variables
+   =========================================== */
+:root,
+[data-bs-theme="light"] {
+    --body-bg: #f3f3ec;
+    --body-color: #212529;
+    --link-color: #0d6efd;
+    --link-hover-color: #0a58ca;
+    --table-border-color: #000;
+    --blockquote-bg: rgba(193, 23, 23, 0.201);
+    --card-bg: #fff;
+    --card-border-color: rgba(0, 0, 0, 0.125);
+    --navbar-border-color: rgba(0, 0, 0, 0.1);
+    --back-to-top-shadow: rgba(0, 0, 0, 0.15);
+}
+
+[data-bs-theme="dark"] {
+    --body-bg: #1a1a2e;
+    --body-color: #e0e0e0;
+    --link-color: #6ea8fe;
+    --link-hover-color: #9ec5fe;
+    --table-border-color: #495057;
+    --blockquote-bg: rgba(220, 53, 69, 0.2);
+    --card-bg: #16213e;
+    --card-border-color: rgba(255, 255, 255, 0.1);
+    --navbar-border-color: rgba(255, 255, 255, 0.1);
+    --back-to-top-shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* Body */
+body {
+    background-color: var(--body-bg) !important;
+    color: var(--body-color);
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Tables */
+table th,
+table td {
+    border-color: var(--table-border-color);
+}
+
+/* Blockquotes */
+blockquote p {
+    background-color: var(--blockquote-bg);
+}
+
+/* Navbar border */
+.site-navbar .container-fluid {
+    border-color: var(--navbar-border-color) !important;
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border-color);
+}
+
+/* Copyright / document info box (overrides Bootstrap bg-info utility) */
+[data-bs-theme="dark"] #copyright {
+    background-color: var(--card-bg) !important;
+    border-color: var(--card-border-color) !important;
+    color: var(--body-color);
+}
+
+/* Back to top button shadow */
+#back-to-top {
+    box-shadow: 0 2px 8px var(--back-to-top-shadow);
+}
+
+/* ===========================================
+   Header — inline nav + language + theme controls
+   =========================================== */
+/* Brand */
+.site-navbar .navbar-brand {
+    font-weight: 700;
+}
+
+/* Nav links: comfortable, even spacing beside the brand */
+.site-navbar .navbar-nav {
+    gap: 0.15rem;
+}
+
+.site-navbar .nav-link {
+    padding: 0.35rem 0.6rem;
+    border-radius: 6px;
+    color: var(--body-color);
+    opacity: 0.78;
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link:focus-visible {
+    opacity: 1;
+    background-color: var(--card-border-color);
+}
+
+/* Right-side controls share one muted color treatment */
+.site-controls {
+    --control-color: rgba(0, 0, 0, 0.55);
+    --control-color-hover: rgba(0, 0, 0, 0.85);
+}
+
+[data-bs-theme="dark"] .site-controls {
+    --control-color: rgba(255, 255, 255, 0.55);
+    --control-color-hover: rgba(255, 255, 255, 0.85);
+}
+
+/* Language switcher: minimal text toggle */
+.site-lang {
+    color: var(--control-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.3rem 0.4rem;
+    border-radius: 6px;
+    line-height: 1;
+    white-space: nowrap; /* CJK labels like 简体中文 must not wrap in the tight navbar */
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.site-lang:hover,
+.site-lang:focus-visible {
+    color: var(--control-color-hover);
+    background-color: var(--card-border-color);
+}
+
+/* Theme switcher trigger */
+.btn-theme {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.35rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--control-color);
+    line-height: 1;
+    border-radius: 6px;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-theme:hover,
+.btn-theme:focus-visible {
+    color: var(--control-color-hover);
+    background-color: var(--card-border-color);
+}
+
+.btn-theme:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-theme .meta-icon {
+    width: 1.05rem;
+    height: 1.05rem;
+    opacity: 1;
+}
+
+/* Trigger shows the icon for the *effective* theme (CSS-driven, no flash) */
+.theme-trigger-icon {
+    display: none;
+    align-items: center;
+}
+
+[data-bs-theme="light"] #theme-icon-sun {
+    display: inline-flex;
+}
+
+[data-bs-theme="dark"] #theme-icon-moon {
+    display: inline-flex;
+}
+
+/* Theme dropdown menu */
+.theme-menu {
+    min-width: 11rem;
+    padding: 0.35rem;
+    border-color: var(--card-border-color);
+    background-color: var(--card-bg);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.theme-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 6px;
+    color: var(--body-color);
+    cursor: pointer;
+}
+
+.theme-menu .theme-label {
+    flex: 1 1 auto;
+}
+
+.theme-menu .dropdown-item:hover,
+.theme-menu .dropdown-item:focus {
+    background-color: var(--card-border-color);
+    color: var(--body-color);
+}
+
+.theme-menu .dropdown-item.active {
+    background-color: transparent;
+    color: var(--link-color);
+    font-weight: 600;
+}
+
+/* Check mark only on the active option */
+.theme-menu .theme-check {
+    display: inline-flex;
+    visibility: hidden;
+    color: var(--link-color);
+}
+
+.theme-menu .dropdown-item.active .theme-check {
+    visibility: visible;
+}
+
+/* Mobile hamburger */
+.site-navbar .navbar-toggler {
+    color: var(--control-color);
+}
+
+.site-navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* 正文与页眉之间留出呼吸空间（首篇文章/标题不再紧贴导航栏） */
+.site-main {
+    margin-top: 1.5rem;
+}
+
+/* ===========================================
+   Code Block Styles
+   =========================================== */
 .highlight div,
-.highlight > pre {
+.highlight>pre {
     overflow-x: auto;
 }
 
@@ -55,6 +300,395 @@
 }
 
 @keyframes copiedAnimation {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; background-color: #37823b; }
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+        background-color: #37823b;
+    }
 }
+
+pre.chroma {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* ===========================================
+   Language Dropdown z-index fix
+   Ensure dropdown appears above TOC/sidebar
+   =========================================== */
+.navbar {
+    position: relative;
+    z-index: 1030;
+}
+
+.navbar .dropdown-menu {
+    z-index: 1040;
+}
+
+/* Sidebar sticky elements - lower than dropdown */
+.sidebar-toc,
+.col-md-3 .sticky-top {
+    z-index: 1010;
+}
+
+/* ===========================================
+   Back to Top Button
+   =========================================== */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1020;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+}
+
+#back-to-top.show {
+    opacity: 0.7;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* Responsive: smaller button on mobile */
+@media (max-width: 768px) {
+    #back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* 正文图片：固定显示高度上限，避免大图（如竖屏截图）占满整页 */
+/* 点击放大功能不受影响：lightbox 使用外层 <a> 链接打开原图 */
+.container-md p a[data-lightbox] {
+    display: block;
+    margin: 1.2rem 0;
+    text-align: left;
+}
+
+.container-md p img {
+    max-height: 600px;   /* 固定显示高度上限，竖图也不会过大 */
+    width: auto;         /* 宽度自适应，保持原始比例 */
+    max-width: 100%;     /* 宽图不超出正文栏 */
+    object-fit: contain;
+    cursor: zoom-in;     /* 提示可点击放大 */
+    border-radius: 6px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* ===========================================
+   Post Meta Row (date / tag / reading time / markdown)
+   Used on the article header and the index post cards
+   =========================================== */
+.post-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;            /* 图标与文字之间留白，不再拥挤 */
+    line-height: 1.4;
+}
+
+/* Inline SVG icons inherit text color and stay crisp at any size */
+.meta-icon {
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    opacity: 0.85;
+    vertical-align: -0.125em;
+}
+
+/* Markdown mark uses a wider viewBox (208x128) */
+.meta-icon--md {
+    width: 1.5em;
+    height: 1em;
+}
+
+/* "View as Markdown" link → the page's .md output (desktop only) */
+.markdown-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+
+.markdown-link:hover,
+.markdown-link:focus-visible {
+    color: var(--link-color);
+}
+
+/* ===========================================
+   Table of Contents — tree style + active tracking
+   =========================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+.toc-header {
+    padding: 0.45rem 0.7rem;
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.toc-chevron {
+    display: inline-flex;   /* 展开/收起两种状态下箭头都保持居中对齐 */
+    align-items: center;
+}
+
+.toc-chevron .meta-icon {
+    width: 0.85em;
+    height: 0.85em;
+    opacity: 0.7;
+}
+
+#tocContent {
+    padding: 0.5rem 0.75rem 0.65rem;
+    border-radius: 0 0 6px 6px;
+}
+
+#TableOfContents {
+    font-size: 0.85rem;
+}
+
+#TableOfContents ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+/* Nested levels get a vertical guide line — the tree trunk */
+#TableOfContents ul ul {
+    margin-left: 0.5rem;
+    padding-left: 0.85rem;
+    border-left: 1px solid var(--card-border-color);
+}
+
+#TableOfContents li {
+    position: relative;
+    margin: 0.1rem 0;
+}
+
+/* Horizontal connector from the trunk to each nested item */
+#TableOfContents ul ul li::before {
+    content: "";
+    position: absolute;
+    left: -0.85rem;
+    top: 0.75em;
+    width: 0.85rem;       /* 连接线贯穿整个缩进，与条目左缘相接 */
+    height: 1px;
+    background-color: var(--card-border-color);
+}
+
+#TableOfContents a {
+    display: block;
+    padding: 0.2rem 0.45rem;
+    border-left: 2px solid transparent;
+    border-radius: 4px;
+    color: var(--body-color);
+    opacity: 0.7;
+    text-decoration: none;
+    transition: color 0.15s ease, background-color 0.15s ease, opacity 0.15s ease;
+}
+
+#TableOfContents a:hover {
+    opacity: 1;
+    background-color: var(--card-border-color);
+}
+
+/* Current section highlight (set by scrollspy) */
+#TableOfContents a.toc-active {
+    opacity: 1;
+    color: var(--link-color);
+    font-weight: 600;
+    border-left-color: var(--link-color);
+    background-color: rgba(13, 110, 253, 0.08);
+}
+
+[data-bs-theme="dark"] #TableOfContents a.toc-active {
+    background-color: rgba(110, 168, 254, 0.12);
+}
+
+/* ===========================================
+   Pagination — compact, borderless (tw93 style)
+   =========================================== */
+.post-pager {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.35rem;
+    /* 上下外边距相等，使「列表↔分页」与「分页↔页脚」两处间距一致 */
+    margin: 2rem 0;
+}
+
+.post-pager .pager-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.5rem;
+    border-radius: 6px;
+    color: var(--body-color);
+    opacity: 0.7;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.15s ease, background-color 0.15s ease, opacity 0.15s ease;
+}
+
+.post-pager a.pager-link:hover,
+.post-pager a.pager-link:focus-visible {
+    opacity: 1;
+    background-color: var(--card-border-color);
+}
+
+.post-pager .pager-link.active {
+    opacity: 1;
+    color: var(--link-color);
+    font-weight: 700;
+}
+
+.post-pager .pager-arrow .meta-icon {
+    width: 0.95rem;
+    height: 0.95rem;
+}
+
+.post-pager .pager-ellipsis {
+    display: inline-flex;
+    align-items: flex-end;
+    padding: 0 0.15rem;
+    color: var(--body-color);
+    opacity: 0.5;
+    user-select: none;
+}
+
+/* ===========================================
+   Post list — even card spacing
+   =========================================== */
+.card-deck .card {
+    margin-bottom: 1.25rem;
+}
+
+/* ===========================================
+   Responsive — mobile header & spacing (tw93-inspired)
+   =========================================== */
+@media (max-width: 767.98px) {
+    /* Collapsed nav drops below as a tidy stacked menu */
+    .site-navbar .navbar-collapse {
+        padding: 0.5rem 0 0.25rem;
+    }
+
+    .site-navbar .navbar-nav {
+        gap: 0;
+    }
+
+    .site-navbar .nav-link {
+        padding: 0.5rem 0.25rem;
+    }
+
+    /* Keep the right-side controls compact and aligned */
+    .site-controls {
+        gap: 0.25rem !important;
+    }
+
+    .post-pager {
+        margin: 1.5rem 0;
+    }
+}
+
+/* ===========================================
+   Home post list — mobile meta & title wrapping
+   (moved from the home template's inline <style>)
+   =========================================== */
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .card-footer .post-meta {
+    gap: 0.75rem !important;  /* 减小项间距 */
+  }
+  .card-footer .post-meta-item {
+    font-size: 0.875rem;  /* 移动端字体稍微缩小 */
+  }
+}
+
+/* 标题样式优化 */
+.card-title {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* ===========================================
+   Single post — tighter meta gap on mobile
+   (moved from the single template's inline <style>)
+   =========================================== */
+@media (max-width: 768px) {
+  .gap-3 {
+    gap: 0.5rem !important;
+  }
+}
+
+/* ===========================================
+   Tag cloud (tags taxonomy page)
+   (moved from the taxonomy template's inline <style>;
+    bare .badge re-scoped under .tag-cloud)
+   =========================================== */
+/* 与首页分页的 margin: 2rem 0 呼应，让「标签云↔页脚」间距和「分页↔页脚」一致 */
+.tag-cloud {
+    margin-bottom: 2rem;
+}
+
+/* 颜色一律用 Bootstrap 主题变量（浅色值与原先的写死色号一致），
+   跟随 data-bs-theme 自动适配深色模式，不要写死色号 */
+.tag-card {
+    background-color: var(--bs-tertiary-bg);
+    border: 1px solid var(--bs-border-color);
+    transition: all 0.2s ease;
+}
+
+.tag-card:hover {
+    background-color: var(--bs-secondary-bg);
+    transform: translateY(-2px);
+}
+
+.tag-name {
+    color: var(--bs-secondary-color);
+    font-size: 0.95rem;
+}
+
+.tag-cloud .badge {
+    background-color: var(--bs-primary);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* ===========================================
+   Sidebar sticky offset (replaces inline style="top: 2rem;")
+   =========================================== */
+.sidebar-sticky {
+    top: 2rem;
+}
+
+/* Structural hooks (intentionally unstyled): .site-header wraps the whole top
+   bar, .site-theme wraps the theme dropdown — kept as stable selectors for
+   user-side overrides. */

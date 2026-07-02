@@ -1,0 +1,54 @@
+- id: previousPage
+  translation: "Previous"
+- id: nextPage
+  translation: "Next"
+- id: noPosts
+  translation: "No posts yet"
+- id: wordCount
+  translation: "Words"
+- id: minutes
+  translation: "min"
+- id: viewAsMarkdown
+  translation: "View as Markdown"
+- id: themeLight
+  translation: "Light"
+- id: themeDark
+  translation: "Dark"
+- id: themeSystem
+  translation: "System"
+- id: tableOfContents
+  translation: "Table of Contents"
+- id: language
+  translation: "Language"
+- id: archiveTitle
+  translation: "Archive"
+- id: archiveByYear
+  translation: "Archive by Year"
+- id: documentInfo
+  translation: "Document Info"
+- id: copyrightNotice
+  translation: "License: Free to share - Non-commercial - No derivatives - Attribution required ("
+- id: ccLicense
+  translation: "CC BY-NC-ND 4.0"
+- id: copyrightEnd
+  translation: ")"
+- id: prevPost
+  translation: "Previous"
+- id: nextPost
+  translation: "Next"
+- id: backToTop
+  translation: "Back to Top"
+- id: toggleDarkMode
+  translation: "Toggle Dark Mode"
+- id: rssTitleSeparator
+  translation: " on "
+- id: rssFeedDescription
+  translation: "Recent content on {{ .Site }}"
+- id: rssFeedDescriptionSection
+  translation: "Recent content in {{ .Section }} on {{ .Site }}"
+- id: notFoundHeading
+  translation: "Oops! The page is gone."
+- id: notFoundText
+  translation: "Sorry, the page you requested does not exist or has been moved."
+- id: backHome
+  translation: "Go Back Home"

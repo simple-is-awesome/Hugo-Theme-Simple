@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="container m-3">
+    <h1 class="mb-4">{{ .Title }}</h1>
+
+    {{/* Pill styles live in static/css/custom.css, scoped under .tag-cloud */}}
+    <div class="tag-cloud d-flex flex-wrap gap-2">
+        {{ range .Data.Terms.ByCount }}
+            <a href="{{ .Page.RelPermalink }}" class="text-decoration-none">
+                <div class="tag-card d-inline-flex align-items-center px-3 py-2 rounded-pill">
+                    <span class="tag-name">#{{ .Name }}</span>
+                    <span class="badge rounded-pill ms-2">{{ .Count }}</span>
+                </div>
+            </a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

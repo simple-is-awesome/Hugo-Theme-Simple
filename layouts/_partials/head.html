@@ -1,0 +1,63 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ if ne .Site.Params.darkMode false }}
+    {{/* Set data-bs-theme before first paint to avoid a flash of the wrong theme */}}
+    <script>
+        (function() {
+            var stored = localStorage.getItem('theme'); // 'light' | 'dark' | null (follow system)
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = (stored === 'light' || stored === 'dark') ? stored : (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-bs-theme', theme);
+        })();
+    </script>
+    {{ end }}
+    {{/* Page name first (Page | Site) so the page topic stands out in search results */}}
+    {{ $title := print .Title " | " .Site.Title }}
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+    {{- $description := .Site.Params.description -}}
+    {{- if .Params.description -}}
+        {{- $description = .Params.description -}}
+    {{- else if .Params.summary -}}
+        {{- $description = .Params.summary -}}
+    {{- else if and .IsPage .Summary -}}
+        {{- $description = .Summary | plainify | truncate 160 -}}
+    {{- end -}}
+    <meta name="description" content="{{ $description }}">
+    <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . "," }}{{ else }}{{ .Site.Params.keywords }}{{ end }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <link rel="canonical" href="{{ .Permalink }}" />
+    {{/* hreflang alternates for translated pages; x-default points at the default content language */}}
+    {{- if .IsTranslated }}
+    {{- range .AllTranslations }}
+    <link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}" />
+    {{- end }}
+    {{- with index (where .AllTranslations "Language.Lang" site.Sites.Default.Language.Lang) 0 }}
+    <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+    {{- end }}
+    {{- end }}
+    {{/* Social share cards (Open Graph / Twitter Card), Hugo embedded templates */}}
+    {{ partial "opengraph.html" . }}
+    {{ partial "twitter_cards.html" . }}
+    {{/* RSS autodiscovery: main feed of the current language site */}}
+    {{ with .Site.Home.OutputFormats.Get "RSS" }}
+    <link rel="alternate" type="application/rss+xml" href="{{ .RelPermalink }}" title="{{ $.Site.Title }}" />
+    {{ end }}
+    <link rel="shortcut icon" href="{{ "images/favicon.ico" | relURL }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/lightbox.min.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}">
+    {{ if and hugo.IsProduction .Site.Params.clarity }}
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", {{ .Site.Params.clarity }});
+    </script>
+    {{ end }}
+</head>

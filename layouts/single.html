@@ -1,0 +1,81 @@
+{{ define "main" }}
+{{ $mainSection := default "blog" .Site.Params.mainSection }}
+<div class="container-md align-items-center">
+  <article>
+    {{/* h1 guarantees a unique main heading per page (a11y/SEO); .h2 keeps the original visual size */}}
+    <h1 class="h2 text-center p-3">{{ .Title }}</h1>
+
+    <!-- Post meta -->
+    {{ if eq .Type $mainSection }}
+    <div class="post-meta d-flex flex-wrap align-items-center justify-content-center gap-3 mb-4 text-secondary small">
+      <span class="post-meta-item">
+        {{ partial "icon.html" "calendar" }}
+        {{ .Date.Format "2006-01-02" }}
+      </span>
+
+      {{ with .Params.tags }}
+      <span class="post-meta-item">
+        {{ partial "icon.html" "tag" }}
+        <span>
+          {{- range $index, $tag := . -}}
+            {{- if gt $index 0 }}, {{ end -}}
+            #{{ $tag }}
+          {{- end -}}
+        </span>
+      </span>
+      {{ end }}
+
+      <span class="post-meta-item">
+        {{ partial "icon.html" "clock" }}
+        {{ .ReadingTime }} {{ i18n "minutes" | default "min" }}
+      </span>
+
+      {{ if site.Params.showWordCount }}
+      <span class="post-meta-item">
+        {{ .WordCount }} {{ i18n "wordCount" | default "words" }}
+      </span>
+      {{ end }}
+
+      {{/* Link to the raw Markdown output, desktop only */}}
+      {{ with .OutputFormats.Get "MarkdownRaw" }}
+      <a class="post-meta-item markdown-link d-none d-md-inline-flex" href="{{ .RelPermalink }}">
+        {{ partial "icon.html" "markdown" }}
+        <span>{{ i18n "viewAsMarkdown" | default "View as Markdown" }}</span>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <!-- Post content -->
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    <!-- Copyright notice -->
+    {{ if eq .Type $mainSection }}
+      {{- partial "copyright.html" . -}}
+
+      <!-- Prev / next navigation -->
+      <div class="d-flex justify-content-between mt-4">
+        {{ with .PrevInSection }}
+        <div class="d-flex align-items-center" style="max-width: 50%;">
+          <div class="text-truncate">
+            <a href="{{ .RelPermalink }}" class="text-decoration-none">&larr; {{ i18n "prevPost" | default "Previous" }}：{{ .Title }}</a>
+          </div>
+        </div>
+        {{ end }}
+        {{ with .NextInSection }}
+        <div class="d-flex align-items-center justify-content-end" style="max-width: 50%;">
+          <div class="text-truncate">
+            <a href="{{ .RelPermalink }}" class="text-decoration-none">{{ i18n "nextPost" | default "Next" }}：{{ .Title }} &rarr;</a>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    {{ end }}
+
+    <!-- Comments -->
+    {{- partial "utterances.html" . -}}
+  </article>
+</div>
+{{ end }}

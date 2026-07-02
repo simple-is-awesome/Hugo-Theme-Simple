@@ -1,8 +1,10 @@
 {{ define "main" }}
 <div class="row text-center mt-5">
     <h1 class="display-1 text-muted">404</h1>
-    <h2 class="display-4 text-muted">Oops! The page is gone.</h2>
-    <p class="lead text-muted">Sorry, the page you requested does not exist.</p>
-    <a href="/" class="btn btn-primary btn-lg">Go Back Home</a>
+    <h2 class="display-4 text-muted">{{ i18n "notFoundHeading" | default "Oops! The page is gone." }}</h2>
+    <p class="lead text-muted">{{ i18n "notFoundText" | default "Sorry, the page you requested does not exist or has been moved." }}</p>
+    <div>
+        <a href="{{ .Site.Home.RelPermalink }}" class="btn btn-primary btn-lg">{{ i18n "backHome" | default "Go Back Home" }}</a>
+    </div>
 </div>
 {{ end }}
