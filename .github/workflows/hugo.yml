@@ -1,4 +1,4 @@
-# workflow name
+# Build the exampleSite with the checked-out theme and deploy it to GitHub Pages
 name: Deploy Hugo site to Pages
 
 on:
@@ -29,38 +29,41 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # github action checkout get the lastest commit
-      - uses: actions/checkout@v3
+      # Checkout into a fixed directory so the theme dir name matches
+      # theme = "hugo-theme-simple" regardless of the repository name
+      - uses: actions/checkout@v4
         with:
+          path: hugo-theme-simple
           fetch-depth: 1
 
       # github pages config
       - name: Configure Pages
         id: pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
 
       # hugo install
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest'
-          
-      # build website
+          hugo-version: '0.154.2'
+          extended: false
+
+      # build the exampleSite against the checked-out theme
       - name: Build
         run: |
           hugo \
-            --minify --verbose -D \
-            --buildFuture \
+            --minify \
             --environment production \
-            --themesDir ../.. --theme Hugo-Theme-Simple
-        working-directory: exampleSite
-      
-      
+            --themesDir ../.. \
+            --theme hugo-theme-simple \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+        working-directory: hugo-theme-simple/exampleSite
+
       # upload public folder
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./exampleSite/public
+          path: ./hugo-theme-simple/exampleSite/public
 
   # Deployment job
   deploy:
@@ -72,4 +75,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
