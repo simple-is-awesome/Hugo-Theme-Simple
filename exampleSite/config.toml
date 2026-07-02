@@ -1,40 +1,132 @@
 # website base url
-baseURL = 'https://hugo.njxzc.top'
-# website language
-languageCode = 'en-us'
+baseURL = 'https://example.org/'
 # website title
 title = 'Hugo Theme Simple'
 # hugo theme
 theme = 'hugo-theme-simple'
-# pageinate
-paginate = 5
-# If true, auto-detect Chinese/Japanese/Korean Languages in the content. 
+# If true, auto-detect Chinese/Japanese/Korean Languages in the content.
 # This will make .Summary and .WordCount behave correctly for CJK languages.
 hasCJKLanguage = true
+# generate robots.txt
+enableRobotsTXT = true
 
-# website menu
-[menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
+# pagination (Hugo >= 0.128; the old top-level 'paginate' key was removed)
+[pagination]
+  pagerSize = 5
+
+# only the tags taxonomy; without this Hugo also generates empty /categories/
+[taxonomies]
+  tag = "tags"
+
+# Multilingual: the navbar language switcher appears automatically as soon as
+# more than one language is configured. The default language stays at the site
+# root; the others live under /<lang>/. Translations of a page are linked by
+# filename suffix (about.md / about.zh.md). Content is fully separated: the
+# English site only shows English pages, the Chinese site only Chinese ones.
+# The switcher shows the target language's languageLabel — a short code like
+# "EN" / "中" — falling back to its languageName when unset.
+# The theme ships UI translations for en and zh; any other language falls back
+# to English strings.
+defaultContentLanguage = 'en'
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-US"
     weight = 1
-  [[menu.main]]
-    name = "Archive"
-    url = "/archive/"
+    title = "Hugo Theme Simple"
+    [languages.en.params]
+      # what the switcher shows on non-English pages
+      languageLabel = "EN"
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        name = "Home"
+        url = "/"
+        weight = 1
+      [[languages.en.menu.main]]
+        name = "Archive"
+        url = "/archive/"
+        weight = 2
+      [[languages.en.menu.main]]
+        name = "Tags"
+        url = "/tags/"
+        weight = 3
+      [[languages.en.menu.main]]
+        name = "About"
+        url = "/about/"
+        weight = 4
+
+  [languages.zh]
+    languageName = "中文"
+    languageCode = "zh-CN"
     weight = 2
-  [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 3
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 4
+    title = "Hugo 简单主题"
+    [languages.zh.params]
+      # what the switcher shows on non-Chinese pages
+      languageLabel = "中"
+    [languages.zh.menu]
+      [[languages.zh.menu.main]]
+        name = "主页"
+        url = "/"
+        weight = 1
+      [[languages.zh.menu.main]]
+        name = "归档"
+        url = "/archive/"
+        weight = 2
+      [[languages.zh.menu.main]]
+        name = "标签"
+        url = "/tags/"
+        weight = 3
+      [[languages.zh.menu.main]]
+        name = "关于"
+        url = "/about/"
+        weight = 4
 
 # website params
 [params]
-  footer= "&copy; 2022-{Year} Made with ❤️ By Jiakai"
-  googleanalytics = ""
+  description = "A simple blog powered by the Hugo Theme Simple"
+  keywords = "blog,hugo,simple"
+  author = "Example"
+  # {Year} is replaced with the current year
+  footer = "&copy; 2023-{Year} Example"
+  # section that holds your posts (home listing, archive, sidebar); default: "blog"
+  mainSection = "blog"
+
+  ## Optional features — uncomment to enable/override ##
+
+  # show the word count in post meta rows (default: false)
+  #showWordCount = true
+
+  # disable the dark/light/system theme toggle (default: true)
+  #darkMode = false
+
+  # disable the floating back-to-top button (default: true)
+  #backToTop = false
+
+  # style RSS feeds with the bundled XSLT stylesheet (default: false)
+  #rssStylesheet = true
+
+  # Microsoft Clarity analytics (production builds only)
+  #clarity = "your-clarity-project-id"
+
+  # utterances comments (https://utteranc.es) — rendered only when repo is set
+  #[params.utterances]
+  #  repo = "your-github-name/your-repo"
+  #  issueTerm = "pathname"
+  #  label = "comment"
+
+  # emaction emoji reactions (https://github.com/emaction/emaction.frontend)
+  #[params.emaction]
+  #  endpoint = "https://your-emaction-backend.example.com"
+
+  # Umami analytics (production builds only)
+  #[params.umami]
+  #  scriptURL = "https://umami.example.com/script.js"
+  #  websiteID = "your-website-id"
+
+# Google Analytics (production builds only)
+#[services.googleAnalytics]
+#  ID = "G-XXXXXXXXXX"
 
 # website permanent link
 [permalinks]
@@ -42,6 +134,12 @@ hasCJKLanguage = true
 
 # website markdown render
 [markup]
+  # syntax highlighting; noClasses=false relies on the theme's chroma styles
+  [markup.highlight]
+    noClasses = false
+    style = 'rose-pine-moon'
+    lineNos = true
+    lineNumbersInTable = true
   # goldmark is the default markdown render of hugo
   [markup.goldmark]
     # more explainations, pls visit: https://gohugo.io/getting-started/configuration-markup/#goldmark
@@ -68,4 +166,3 @@ hasCJKLanguage = true
       startLevel = 2
       endLevel = 3
       ordered = false
-     

@@ -2,9 +2,9 @@
 title: "《长恨歌》"
 date: 2023-03-14T01:37:56+08:00
 draft: false
-tags: ["中文"]
+tags: ["诗歌"]
 slug: "chinese-poem"
-summary: "Test chinese under this blog theme."
+summary: "白居易长篇叙事诗《长恨歌》全文。"
 ---
 
 >《长恨歌》是中国唐朝诗人白居易的一首长篇叙事诗。
