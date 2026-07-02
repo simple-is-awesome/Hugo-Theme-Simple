@@ -1,0 +1,75 @@
+<header class="site-header container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+<nav class="navbar navbar-expand-md site-navbar">
+    <div class="container-fluid px-0 border-bottom">
+        <a class="navbar-brand me-2 me-md-4" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+
+        {{/* Main menu: inline next to the brand on desktop, collapses below on mobile */}}
+        <div class="collapse navbar-collapse order-3 order-md-0" id="navbarNav">
+            <ul class="navbar-nav">
+                {{ range .Site.Menus.main }}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+
+        {{/* Right-hand controls: language switcher + theme switcher + mobile hamburger */}}
+        <div class="d-flex align-items-center gap-2 ms-auto site-controls">
+            {{/* Language switcher: link this page's translation when one exists,
+                 otherwise fall back to that language's home page to avoid 404s.
+                 The label is the target language's params.languageLabel (a short
+                 code like "EN" or "中"), falling back to its languageName. */}}
+            {{ if gt (len site.Sites) 1 }}
+                {{ $page := . }}
+                {{ range site.Sites }}
+                    {{ if ne .Language.Lang $page.Site.Language.Lang }}
+                        {{ $target := .Home }}
+                        {{ $lang := .Language.Lang }}
+                        {{ range $page.AllTranslations }}
+                            {{ if eq .Language.Lang $lang }}{{ $target = . }}{{ end }}
+                        {{ end }}
+                        <a class="site-lang" href="{{ $target.RelPermalink }}" hreflang="{{ .Language.LanguageCode }}" aria-label="{{ i18n "language" | default "Language" }}: {{ .Language.LanguageName }}">{{ or .Params.languageLabel .Language.LanguageName }}</a>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            {{ if ne .Site.Params.darkMode false }}
+            {{/* Theme switcher: light / dark / follow system */}}
+            <div class="dropdown site-theme">
+                <button class="btn-theme" id="theme-menu-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{{ i18n "toggleDarkMode" | default "Toggle Dark Mode" }}">
+                    <span id="theme-icon-sun" class="theme-trigger-icon">{{ partial "icon.html" "sun" }}</span>
+                    <span id="theme-icon-moon" class="theme-trigger-icon">{{ partial "icon.html" "moon" }}</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end theme-menu" aria-labelledby="theme-menu-btn">
+                    <li>
+                        <button type="button" class="dropdown-item theme-option" data-theme="light" role="menuitemradio" aria-checked="false">
+                            {{ partial "icon.html" "sun" }}<span class="theme-label">{{ i18n "themeLight" | default "Light" }}</span><span class="theme-check">{{ partial "icon.html" "check" }}</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="dropdown-item theme-option" data-theme="dark" role="menuitemradio" aria-checked="false">
+                            {{ partial "icon.html" "moon" }}<span class="theme-label">{{ i18n "themeDark" | default "Dark" }}</span><span class="theme-check">{{ partial "icon.html" "check" }}</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="dropdown-item theme-option" data-theme="system" role="menuitemradio" aria-checked="false">
+                            {{ partial "icon.html" "laptop" }}<span class="theme-label">{{ i18n "themeSystem" | default "System" }}</span><span class="theme-check">{{ partial "icon.html" "check" }}</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            {{ end }}
+
+            {{/* Mobile hamburger */}}
+            <button class="navbar-toggler border-0 shadow-none p-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</nav>
+    </div>
+  </div>
+</header>

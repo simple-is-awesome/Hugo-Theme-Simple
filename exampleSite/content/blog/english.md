@@ -2,17 +2,17 @@
 title: "New York is 3 hours ahead of California"
 date: 2023-03-14T15:43:48+08:00
 draft: false
-tags: ["English"]
+tags: ["poem"]
 slug: "newyork-is-3-hours-ahead-of-california"
-summary: "Test english under this blog theme."
+summary: "A little poem about time zones and running your own race."
 showtoc: true
 ---
 
-## 1、诗歌图片
+## 1. Demo image
 
-![New York is 3 hours ahead of California](https://vip2.loli.net/2023/03/14/GzvJj1L4UQ3EnFo.webp)
+![Demo image](/images/demo-screenshot.png)
 
-## 2、诗歌
+## 2. Poem
 
 New York is 3 hours ahead of California,
 

@@ -1,0 +1,7 @@
+# Theme module metadata only.
+# This file is config-merged into consuming sites, so keep it inert:
+# no params, no defaults — just the Hugo version requirement.
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.146.0"

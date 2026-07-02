@@ -1,0 +1,42 @@
+{{- $pctx := . -}}
+{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+{{- $pages := slice -}}
+{{- if or $.IsHome $.IsSection -}}
+{{- $pages = $pctx.RegularPages -}}
+{{- else -}}
+{{- $pages = $pctx.Pages -}}
+{{- end -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+{{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+{{- if .Site.Params.rssStylesheet }}
+{{- /* the theme ships en + zh stylesheets; zh-cn/zh-hans etc. map to zh, others fall back to en */}}
+{{- $rssLang := .Site.Language.Lang }}
+{{- if hasPrefix $rssLang "zh" }}{{ $rssLang = "zh" }}{{ else if ne $rssLang "en" }}{{ $rssLang = "en" }}{{ end }}
+{{ printf "<?xml-stylesheet type=\"text/xsl\" href=\"%s\" ?>" (relURL (printf "xslt/simple-rss.%s.xslt" $rssLang)) | safeHTML }}
+{{- end }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ if and .Title (ne .Title .Site.Title) }}{{ .Title }}{{ i18n "rssTitleSeparator" | default " on " }}{{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ if and .Title (ne .Title .Site.Title) }}{{ i18n "rssFeedDescriptionSection" (dict "Section" .Title "Site" .Site.Title) | default (printf "Recent content in %s on %s" .Title .Site.Title) }}{{ else }}{{ i18n "rssFeedDescription" (dict "Site" .Site.Title) | default (printf "Recent content on %s" .Site.Title) }}{{ end }}</description>
+    <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
+    <language>{{.}}</language>{{end}}{{ with .Site.Copyright }}
+    <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+    {{- with .OutputFormats.Get "RSS" -}}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end -}}
+    {{ range $pages }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{- .Content | html -}}</description>
+    </item>
+    {{ end }}
+  </channel>
+</rss>

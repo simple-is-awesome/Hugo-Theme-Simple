@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{ $paginator := .Paginate .Pages }}
+<div class="container">
+    <h1 class="mt-5 mb-4">📌 {{ .Title }}</h1>
+    <ul class="list-group">
+        {{ range $paginator.Pages }}
+            <li class="list-group-item">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <time datetime="{{ .Date.Format "2006-01-02" }}" class="badge bg-primary rounded-pill">{{ .Date.Format "2006-01-02" }}</time>
+            </li>
+        {{ end }}
+    </ul>
+    {{ partial "pagination.html" $paginator }}
+</div>
+{{ end }}

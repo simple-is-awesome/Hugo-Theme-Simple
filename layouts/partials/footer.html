@@ -1,5 +1,0 @@
-<div class="container mx-auto text-center mb-3 mt-2">
-    {{ with .Site.Params.footer }}
-    <span>{{ replace . "{Year}" now.Year | markdownify }}</span>
-    {{ end }}
-</div>

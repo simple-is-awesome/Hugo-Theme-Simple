@@ -1,0 +1,55 @@
+{{ define "main" }}
+{{ $mainSection := default "blog" .Site.Params.mainSection }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" $mainSection) }}
+<div class="card-deck">
+  {{ range $paginator.Pages }}
+  <div class="card mb-3">
+    <div class="card-body">
+      <h4 class="card-title text-break">
+        <a href="{{ .RelPermalink }}" class="card-link text-decoration-none text-wrap">
+          {{ .Title }}
+        </a>
+      </h4>
+      <p class="card-text">{{ .Summary }}</p>
+    </div>
+    <div class="card-footer">
+      <div class="post-meta d-flex flex-wrap align-items-center gap-3 text-secondary small">
+        <span class="post-meta-item">
+          {{ partial "icon.html" "calendar" }}
+          {{ .Date.Format "2006-01-02" }}
+        </span>
+
+        {{ with .Params.tags }}
+        <span class="post-meta-item">
+          {{ partial "icon.html" "tag" }}
+          <span>
+            {{- range $index, $tag := . -}}
+              {{- if gt $index 0 }}, {{ end -}}
+              #{{ $tag }}
+            {{- end -}}
+          </span>
+        </span>
+        {{ end }}
+
+        <span class="post-meta-item">
+          {{ partial "icon.html" "clock" }}
+          {{ .ReadingTime }} {{ i18n "minutes" | default "min" }}
+        </span>
+
+        {{ if site.Params.showWordCount }}
+        <span class="post-meta-item">
+          {{ .WordCount }} {{ i18n "wordCount" | default "words" }}
+        </span>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  {{ else }}
+  <div class="alert alert-secondary my-3" role="alert">
+    {{ i18n "noPosts" | default "No posts yet" }}
+  </div>
+  {{ end }}
+</div>
+
+{{ partial "pagination.html" $paginator }}
+{{ end }}

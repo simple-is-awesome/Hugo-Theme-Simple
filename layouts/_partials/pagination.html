@@ -1,0 +1,36 @@
+{{- /*
+  Compact pager (first page, last page, current ±1, ellipsis in between).
+  Context: a Paginator (call as `partial "pagination.html" $paginator`).
+*/ -}}
+{{ $p := . }}
+{{ if gt $p.TotalPages 1 }}
+{{ $cur := $p.PageNumber }}
+{{ $total := $p.TotalPages }}
+<nav class="post-pager" aria-label="Pagination">
+  {{ if $p.HasPrev }}
+  <a class="pager-link pager-arrow" href="{{ $p.Prev.URL }}" aria-label="{{ i18n "previousPage" | default "Previous" }}">{{ partial "icon.html" "chevron-left" }}</a>
+  {{ end }}
+
+  {{/* Collect the page numbers to show: first, last, current ±1 */}}
+  {{ $show := slice }}
+  {{ range $i := (seq 1 $total) }}
+    {{ if or (eq $i 1) (eq $i $total) (and (ge $i (sub $cur 1)) (le $i (add $cur 1))) }}
+      {{ $show = $show | append $i }}
+    {{ end }}
+  {{ end }}
+  {{ $prev := 0 }}
+  {{ range $n := $show }}
+    {{ if and (gt $prev 0) (gt (sub $n $prev) 1) }}<span class="pager-ellipsis">…</span>{{ end }}
+    {{ if eq $n $cur }}
+    <span class="pager-link active" aria-current="page">{{ $n }}</span>
+    {{ else }}
+    <a class="pager-link" href="{{ (index $p.Pagers (sub $n 1)).URL }}">{{ $n }}</a>
+    {{ end }}
+    {{ $prev = $n }}
+  {{ end }}
+
+  {{ if $p.HasNext }}
+  <a class="pager-link pager-arrow" href="{{ $p.Next.URL }}" aria-label="{{ i18n "nextPage" | default "Next" }}">{{ partial "icon.html" "chevron-right" }}</a>
+  {{ end }}
+</nav>
+{{ end }}

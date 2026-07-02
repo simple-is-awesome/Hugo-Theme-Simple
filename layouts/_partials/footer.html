@@ -1,0 +1,8 @@
+{{/* mt-auto: body is a min-vh-100 flex column, so the auto margin absorbs the
+     remaining space and pins the footer to the viewport bottom on short pages */}}
+<footer class="container mx-auto text-center mb-4 mt-auto">
+    {{ with .Site.Params.footer }}
+    {{ $text := replace . "{Year}" (string now.Year) }}
+    <span class="fw-semibold">{{ $text | markdownify }}</span>
+    {{ end }}
+</footer>

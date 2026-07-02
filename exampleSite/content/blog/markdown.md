@@ -4,35 +4,35 @@ date: 2023-03-14T00:00:00+08:00
 draft: false
 tags: ["markdown"]
 slug: "markdown-syntax"
-summary: "Test markdown syntax under this blog theme."
-showtoc: false
+summary: "A tour of the Markdown syntax this theme supports."
+showtoc: true
 ---
 
-## 1、标题
+## 1. Headings
 
-代码：
+Code:
 
 ```
-# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
 ```
 
-效果：
+Result:
 
-# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
 
-## 2、脚注
+## 2. Footnotes
 
-代码：
+Code:
 
 ```
 Google[^1]
@@ -49,7 +49,7 @@ ChatGPT[^3]
 [^3]:https://chat.openai.com
 ```
 
-效果：
+Result:
 
 Google[^1]
 
@@ -64,23 +64,23 @@ ChatGPT[^3]
 
 [^3]:https://chat.openai.com
 
-## 3、代码
+## 3. Code
 
-### 3.1、行内代码：
+### 3.1 Inline code
 
-代码：
+Code:
 
 ```
 `echo "hello world"`
 ```
 
-效果：
+Result:
 
 `echo "hello world"`
 
-###  3.2、代码块
+### 3.2 Code blocks
 
-代码：
+Code:
 
 <pre><code>
 ```c
@@ -100,7 +100,7 @@ console.log("hello world")
 ```
 </code></pre>
 
-效果：
+Result:
 
 ```C
 # include <stdio.h>
@@ -119,31 +119,31 @@ console.log("hello world")
 ```
 
 
-## 4、字体样式
+## 4. Text styles
 
-代码：
-
-```
-**加粗**
-
-*斜体*
-
-~~删除线~~
+Code:
 
 ```
+**bold**
 
-效果：
+*italic*
 
-**加粗**
+~~strikethrough~~
 
-*斜体*
+```
 
-~~删除线~~
+Result:
+
+**bold**
+
+*italic*
+
+~~strikethrough~~
 
 
-## 5、超链接
+## 5. Links
 
-代码：
+Code:
 
 ```
 [Google](https://google.com)
@@ -153,7 +153,7 @@ console.log("hello world")
 [ChatGPT](https://chat.openai.com)
 ```
 
-效果：
+Result:
 
 [Google](https://google.com)
 
@@ -161,124 +161,106 @@ console.log("hello world")
 
 [ChatGPT](https://chat.openai.com)
 
-## 6、图片
+## 6. Images
 
-代码：
-
-```
-![Great Wall](https://vip2.loli.net/2023/03/14/F25Uehy3nXQlVPT.webp)
-```
-
-效果：
-
-![Great Wall](https://vip2.loli.net/2023/03/14/F25Uehy3nXQlVPT.webp)
-
-## 7、列表
-
-### 7.1、无序列表
-
-代码：
+Code:
 
 ```
-- 北京
-- 江苏
-  - 南京
-  - 南通
-    - 海门
+![Demo image](/images/demo-screenshot.png)
 ```
 
-效果：
+Result:
 
-- 北京
-- 江苏
-  - 南京
-  - 南通
-    - 海门
+![Demo image](/images/demo-screenshot.png)
 
-### 7.2、有序列表
+## 7. Lists
 
-代码：
+### 7.1 Unordered lists
+
+Code:
 
 ```
-1. 春天
-2. 夏天
-   1. 立夏
-   2. 夏至
+- Fruits
+- Vegetables
+  - Carrot
+  - Potato
+    - Sweet potato
 ```
 
-效果：
+Result:
 
-1. 春天
-2. 夏天
-   1. 立夏
-   2. 夏至
+- Fruits
+- Vegetables
+  - Carrot
+  - Potato
+    - Sweet potato
 
+### 7.2 Ordered lists
 
-### 7.3、任务列表
-
-代码：
-
-```
-- [X] 吃饭
-- [ ] 睡觉
-- [ ] 打豆豆
-```
-
-效果：
-
-- [X] 吃饭
-- [ ] 睡觉
-- [ ] 打豆豆
-
-
-
-
-
-## 8、引用
-
-代码：
+Code:
 
 ```
-> 民主不是装饰品，不是用来做摆设的，而是要用来解决人民需要解决的问题的。”
+1. Spring
+2. Summer
+   1. June
+   2. July
+```
+
+Result:
+
+1. Spring
+2. Summer
+   1. June
+   2. July
+
+
+### 7.3 Task lists
+
+Code:
+
+```
+- [X] Eat
+- [ ] Sleep
+- [ ] Repeat
+```
+
+Result:
+
+- [X] Eat
+- [ ] Sleep
+- [ ] Repeat
+
+
+## 8. Blockquotes
+
+Code:
+
+```
+> Life is really simple, but we insist on making it complicated.
 >
-> 一个国家民主不民主，关键在于是不是真正做到了人民当家作主，要看人民有没有投票权，更要看人民有没有广泛参与权；
->
-> 要看人民在选举过程中得到了什么口头许诺，更要看选举后这些承诺实现了多少；
->
-> 要看制度和法律规定了什么样的政治程序和政治规则，更要看这些制度和法律是不是真正得到了执行；
->
-> 要看权力运行规则和程序是否民主，更要看权力是否真正受到人民监督和制约。
-
-> 摘自《学习强国》
+> — Confucius
 ```
 
-效果：
+Result:
 
-> 民主不是装饰品，不是用来做摆设的，而是要用来解决人民需要解决的问题的。”
-> 
-> 一个国家民主不民主，关键在于是不是真正做到了人民当家作主，要看人民有没有投票权，更要看人民有没有广泛参与权；
-> 
-> 要看人民在选举过程中得到了什么口头许诺，更要看选举后这些承诺实现了多少；
-> 
-> 要看制度和法律规定了什么样的政治程序和政治规则，更要看这些制度和法律是不是真正得到了执行；
-> 
-> 要看权力运行规则和程序是否民主，更要看权力是否真正受到人民监督和制约。
-> 摘自《学习强国》
+> Life is really simple, but we insist on making it complicated.
+>
+> — Confucius
 
-## 9、表格
+## 9. Tables
 
-代码:
+Code:
 
 ```
-| 姓名 | 年龄 | 性别 |
-| :--: | :--: | :--: |
-| 张三 | 20 | 男 |
-| 李四 | 21 | 女 |
+| Name  | Age | Gender |
+| :---: | :-: | :----: |
+| Alice | 20  | F      |
+| Bob   | 21  | M      |
 ```
 
-效果：
+Result:
 
-| 姓名 | 年龄 | 性别 |
-| :--: | :--: | :--: |
-| 张三 | 20 | 男 |
-| 李四 | 21 | 女 |
+| Name  | Age | Gender |
+| :---: | :-: | :----: |
+| Alice | 20  | F      |
+| Bob   | 21  | M      |
