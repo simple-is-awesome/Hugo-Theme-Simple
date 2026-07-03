@@ -8,6 +8,8 @@ This theme is named Simple. It is a clean, content-first blog theme built on Boo
 
 Confucius once said, "Life is really simple, but we insist on making it complicated." With this in mind, our goal is to return to the essence of blogging and rediscover the original charm it holds. This theme embodies simplicity and elegance, allowing you to focus on what truly matters — your content.
 
+**Live demo:** https://simple-is-awesome.github.io/Hugo-Theme-Simple/ (the bilingual `exampleSite`, deployed from this repo)
+
 ## Screenshots
 
 ![light](docs/images/screenshot-light.png)

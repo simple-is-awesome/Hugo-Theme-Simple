@@ -8,6 +8,8 @@
 
 孔子曾经说过："生活本来就很简单，但我们总是喜欢把它变得复杂。"秉承这个观念，我们的目标是回归博客的本质，重新发掘它最初的魅力。这个主题体现了简约与优雅，让你能够专注于真正重要的事物——你的内容。
 
+**在线演示：** https://simple-is-awesome.github.io/Hugo-Theme-Simple/ （即本仓库自动部署的双语 `exampleSite`）
+
 ## 截图
 
 ![light](docs/images/screenshot-light.png)

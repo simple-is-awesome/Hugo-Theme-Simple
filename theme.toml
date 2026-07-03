@@ -6,6 +6,7 @@ license = "MIT"
 licenselink = "https://github.com/simple-is-awesome/Hugo-Theme-Simple/blob/main/LICENSE"
 description = "A simple, clean blog theme built on Bootstrap 5 — multilingual (en/zh) with i18n, dark/light/system mode, archive and tag-cloud layouts, collapsible table of contents, and utterances comments."
 homepage = "https://github.com/simple-is-awesome/Hugo-Theme-Simple"
+demosite = "https://simple-is-awesome.github.io/Hugo-Theme-Simple/"
 tags = [
   "blog",
   "simple",
