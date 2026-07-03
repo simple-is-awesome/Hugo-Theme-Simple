@@ -291,6 +291,10 @@ cascade:
 
 祝写博客愉快！:blush: :blush: :blush:
 
+## 致谢
+
+本主题 2026 年的现代化改造——Hugo 0.146+ 结构迁移、深色模式、多语言支持、双语演示站以及本文档——由 [Claude Code](https://claude.com/claude-code)（**Claude Fable 5** 模型）结对完成。谢谢 Claude！❤️
+
 ## 许可证
 
 MIT

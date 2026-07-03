@@ -291,6 +291,10 @@ A ready-made GitHub Actions workflow (`.github/workflows/hugo.yml`) builds the `
 
 Happy blogging! :blush: :blush: :blush:
 
+## Acknowledgements
+
+The 2026 modernization of this theme — the Hugo 0.146+ layout migration, dark mode, multilingual support, the bilingual demo site and these docs — was pair-programmed with [Claude Code](https://claude.com/claude-code) running **Claude Fable 5**. Thanks, Claude! ❤️
+
 ## License
 
 MIT
