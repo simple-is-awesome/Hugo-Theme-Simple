@@ -41,19 +41,19 @@ defaultContentLanguage = 'en'
     [languages.en.menu]
       [[languages.en.menu.main]]
         name = "Home"
-        url = "/"
+        pageRef = "/"
         weight = 1
       [[languages.en.menu.main]]
         name = "Archive"
-        url = "/archive/"
+        pageRef = "/blog"
         weight = 2
       [[languages.en.menu.main]]
         name = "Tags"
-        url = "/tags/"
+        pageRef = "/tags"
         weight = 3
       [[languages.en.menu.main]]
         name = "About"
-        url = "/about/"
+        pageRef = "/about"
         weight = 4
 
   [languages.zh]
@@ -67,19 +67,19 @@ defaultContentLanguage = 'en'
     [languages.zh.menu]
       [[languages.zh.menu.main]]
         name = "主页"
-        url = "/"
+        pageRef = "/"
         weight = 1
       [[languages.zh.menu.main]]
         name = "归档"
-        url = "/archive/"
+        pageRef = "/blog"
         weight = 2
       [[languages.zh.menu.main]]
         name = "标签"
-        url = "/tags/"
+        pageRef = "/tags"
         weight = 3
       [[languages.zh.menu.main]]
         name = "关于"
-        url = "/about/"
+        pageRef = "/about"
         weight = 4
 
 # website params
@@ -140,6 +140,11 @@ defaultContentLanguage = 'en'
     style = 'rose-pine-moon'
     lineNos = true
     lineNumbersInTable = true
+  # resolve content images from assets/ via Hugo embedded render hook, so
+  # src URLs stay correct when the site is deployed under a subpath
+  [markup.goldmark.renderHooks]
+    [markup.goldmark.renderHooks.image]
+      useEmbedded = "fallback"
   # goldmark is the default markdown render of hugo
   [markup.goldmark]
     # more explainations, pls visit: https://gohugo.io/getting-started/configuration-markup/#goldmark

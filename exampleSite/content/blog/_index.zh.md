@@ -1,5 +1,5 @@
 ---
 title: "归档"
-url: "/archive/"
+url: "/zh/archive/"
 layout: "archive"
 ---

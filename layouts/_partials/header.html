@@ -9,8 +9,11 @@
         <div class="collapse navbar-collapse order-3 order-md-0" id="navbarNav">
             <ul class="navbar-nav">
                 {{ range .Site.Menus.main }}
+                {{/* pageRef entries resolve to the page's real URL (language- and
+                     subpath-aware); only legacy url-style entries need relLangURL,
+                     which breaks under a subpath baseURL — prefer pageRef. */}}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+                    <a class="nav-link" href="{{ if .Page }}{{ .URL }}{{ else }}{{ .URL | relLangURL }}{{ end }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
             </ul>

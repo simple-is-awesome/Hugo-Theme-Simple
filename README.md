@@ -177,6 +177,7 @@ How it behaves:
 - The switcher is a compact toggle showing the target language's `languageLabel` (a short code like `EN` / `中`); when unset it falls back to that language's `languageName`.
 - It links the **translation of the current page** when one exists, and falls back to that language's homepage otherwise — so it never 404s (e.g. on tag pages).
 - `hreflang` alternates (including `x-default`, pointing at the default language) are emitted automatically for translated pages.
+- Define menu entries with `pageRef` instead of `url` (see `exampleSite/config.toml`) — Hugo then resolves each language's real page URL, which also keeps menus working when the site is deployed under a subpath (e.g. a GitHub Pages project site).
 
 Linking translations of a page:
 
@@ -248,6 +249,8 @@ layout: "archive"
 ```
 
 Posts are grouped by year and month with per-year tag chips, plus a sticky year-jump sidebar on desktop.
+
+On a multilingual site, write the language prefix into each translation's `url` yourself (e.g. `url: "/zh/archive/"` in `_index.zh.md`) — front-matter `url` values are used as-is and are not language-prefixed automatically.
 
 ### Back to top & word count
 

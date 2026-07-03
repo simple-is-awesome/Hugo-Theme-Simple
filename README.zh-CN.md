@@ -177,6 +177,7 @@ defaultContentLanguage = 'en'
 - 切换器是一个紧凑的开关，显示目标语言的 `languageLabel`（如 `EN` / `中` 这样的短标签）；未设置时回退到该语言的 `languageName`。
 - 它优先链接到**当前页面的对应译文**；没有译文时回退到该语言的首页——因此永远不会 404（例如在标签页上）。
 - 有译文的页面会自动输出 `hreflang` 备用链接（含指向默认语言的 `x-default`）。
+- 菜单项请用 `pageRef` 而非 `url` 定义（参见 `exampleSite/config.toml`）——Hugo 会解析出各语言的真实页面地址，站点部署在子路径下（如 GitHub Pages 项目站点）时菜单也不会失效。
 
 关联同一篇文章的多语言版本：
 
@@ -248,6 +249,8 @@ layout: "archive"
 ```
 
 文章按年、月分组，每年附标签统计徽章，桌面端还有粘性的年份跳转侧边栏。
+
+多语言站点请自行在各译文的 `url` 中写入语言前缀（如 `_index.zh.md` 里写 `url: "/zh/archive/"`）——front matter 的 `url` 会被原样使用，不会自动加语言前缀。
 
 ### 回到顶部与字数统计
 
