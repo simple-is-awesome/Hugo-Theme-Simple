@@ -18,7 +18,7 @@ Confucius once said, "Life is really simple, but we insist on making it complica
 
 ## Features
 
-- Hugo ≥ 0.146 (standard edition is enough, extended not required)
+- Hugo ≥ 0.158 (standard edition is enough, extended not required)
 - Bootstrap 5.3, responsive and fast
 - Multilingual with an automatic navbar language switcher; English and Chinese UI translations shipped, every string falls back to English
 - Dark / light / system theme toggle, flash-free on page load
@@ -37,7 +37,7 @@ Confucius once said, "Life is really simple, but we insist on making it complica
 
 ## Requirements
 
-- Hugo **0.146.0 or later**
+- Hugo **0.158.0 or later**
 
 ## Installation
 

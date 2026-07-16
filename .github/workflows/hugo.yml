@@ -45,7 +45,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.154.2'
+          hugo-version: '0.164.0'
           extended: false
 
       # build the exampleSite against the checked-out theme

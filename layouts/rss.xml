@@ -22,7 +22,7 @@
     <title>{{ if and .Title (ne .Title .Site.Title) }}{{ .Title }}{{ i18n "rssTitleSeparator" | default " on " }}{{ .Site.Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
     <link>{{ .Permalink }}</link>
     <description>{{ if and .Title (ne .Title .Site.Title) }}{{ i18n "rssFeedDescriptionSection" (dict "Section" .Title "Site" .Site.Title) | default (printf "Recent content in %s on %s" .Title .Site.Title) }}{{ else }}{{ i18n "rssFeedDescription" (dict "Site" .Site.Title) | default (printf "Recent content on %s" .Site.Title) }}{{ end }}</description>
-    <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
+    <generator>Hugo -- gohugo.io</generator>{{ with .Site.Language.Locale }}
     <language>{{.}}</language>{{end}}{{ with .Site.Copyright }}
     <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
     <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}

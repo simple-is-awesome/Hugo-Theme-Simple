@@ -32,9 +32,9 @@
     {{/* hreflang alternates for translated pages; x-default points at the default content language */}}
     {{- if .IsTranslated }}
     {{- range .AllTranslations }}
-    <link rel="alternate" hreflang="{{ .Language.LanguageCode }}" href="{{ .Permalink }}" />
+    <link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}" />
     {{- end }}
-    {{- with index (where .AllTranslations "Language.Lang" site.Sites.Default.Language.Lang) 0 }}
+    {{- with index (where .AllTranslations "Language.Lang" hugo.Sites.Default.Language.Lang) 0 }}
     <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
     {{- end }}
     {{- end }}

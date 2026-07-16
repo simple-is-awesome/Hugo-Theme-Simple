@@ -24,17 +24,17 @@
             {{/* Language switcher: link this page's translation when one exists,
                  otherwise fall back to that language's home page to avoid 404s.
                  The label is the target language's params.languageLabel (a short
-                 code like "EN" or "中"), falling back to its languageName. */}}
-            {{ if gt (len site.Sites) 1 }}
+                 code like "EN" or "中"), falling back to its label. */}}
+            {{ if gt (len hugo.Sites) 1 }}
                 {{ $page := . }}
-                {{ range site.Sites }}
+                {{ range hugo.Sites }}
                     {{ if ne .Language.Lang $page.Site.Language.Lang }}
                         {{ $target := .Home }}
                         {{ $lang := .Language.Lang }}
                         {{ range $page.AllTranslations }}
                             {{ if eq .Language.Lang $lang }}{{ $target = . }}{{ end }}
                         {{ end }}
-                        <a class="site-lang" href="{{ $target.RelPermalink }}" hreflang="{{ .Language.LanguageCode }}" aria-label="{{ i18n "language" | default "Language" }}: {{ .Language.LanguageName }}">{{ or .Params.languageLabel .Language.LanguageName }}</a>
+                        <a class="site-lang" href="{{ $target.RelPermalink }}" hreflang="{{ .Language.Locale }}" aria-label="{{ i18n "language" | default "Language" }}: {{ .Language.Label }}">{{ or .Params.languageLabel .Language.Label }}</a>
                     {{ end }}
                 {{ end }}
             {{ end }}

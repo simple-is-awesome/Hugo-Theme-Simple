@@ -24,15 +24,15 @@ enableRobotsTXT = true
 # filename suffix (about.md / about.zh.md). Content is fully separated: the
 # English site only shows English pages, the Chinese site only Chinese ones.
 # The switcher shows the target language's languageLabel — a short code like
-# "EN" / "中" — falling back to its languageName when unset.
+# "EN" / "中" — falling back to its label when unset.
 # The theme ships UI translations for en and zh; any other language falls back
 # to English strings.
 defaultContentLanguage = 'en'
 
 [languages]
   [languages.en]
-    languageName = "English"
-    languageCode = "en-US"
+    label = "English"
+    locale = "en-US"
     weight = 1
     title = "Hugo Theme Simple"
     [languages.en.params]
@@ -57,8 +57,8 @@ defaultContentLanguage = 'en'
         weight = 4
 
   [languages.zh]
-    languageName = "中文"
-    languageCode = "zh-CN"
+    label = "中文"
+    locale = "zh-CN"
     weight = 2
     title = "Hugo 简单主题"
     [languages.zh.params]
